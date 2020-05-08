@@ -1,6 +1,6 @@
 
 CREATE FUNCTION "DBA"."getPath"()
-// renvoie le chemin (path) de la racine du site (où est située la base de données)
+// renvoie le chemin (path) de la racine du site (oÃ¹ est situÃ©e la base de donnÃ©es)
 returns long varchar
 deterministic
 BEGIN
@@ -18,11 +18,11 @@ END;
 
 // drop procedure http_getPage;
 CREATE PROCEDURE "DBA"."http_getPage"(in url char(255))
-// renvoie le contenu de la page html dont le nom (SANS extension) est le paramètre url
+// renvoie le contenu de la page html dont le nom (SANS extension) est le paramÃ¨tre url
 BEGIN
 
     call sa_set_http_header('Content-Type', 'text/html; charset=utf-8'); // header http
-    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nécessaire si appels depuis le serveur - dangereux en production
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nÃ©cessaire si appels depuis le serveur - dangereux en production
 	select xp_read_file(dba.getPath() || url || '.html'); // renvoyer page
 
 END;
@@ -31,41 +31,41 @@ COMMENT ON PROCEDURE "DBA"."http_getPage" IS 'fournisseur de fichier .html (raci
 --
 
 CREATE PROCEDURE "DBA"."http_getJS"(in url char(255))
-// renvoie le contenu du script js dont le nom (+ extension) est le paramètre url
+// renvoie le contenu du script js dont le nom (+ extension) est le paramÃ¨tre url
 BEGIN
 -- 
   call sa_set_http_header('Content-Type', 'application/javascript'); // header http
-    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nécessaire si appels depuis le serveur - dangereux en production
-	select xp_read_file(dba.getPath() || 'js\' || url);                // renvoyer fichier javascript
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nÃ©cessaire si appels depuis le serveur - dangereux en production
+	select xp_read_file(dba.getPath() || url);                // renvoyer fichier javascript
 --
 END;
-COMMENT ON PROCEDURE "DBA"."http_getJS" IS 'fournisseur de fichier .js (sous répertoire JS du site)';
+COMMENT ON PROCEDURE "DBA"."http_getJS" IS 'fournisseur de fichier .js (sous rÃ©pertoire JS du site)';
 
 --
 
 CREATE PROCEDURE "DBA"."http_getCSS"(in url char(255))
-// renvoie le contenu de la feuille de style dont le nom (+ extension) est le paramètre url
+// renvoie le contenu de la feuille de style dont le nom (+ extension) est le paramÃ¨tre url
 BEGIN
 -- 
   call sa_set_http_header('Content-Type', 'text/css'); // header http
-    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nécessaire si appels depuis le serveur - dangereux en production
-	select xp_read_file(dba.getPath() || 'CSS\' || url); // renvoyer fichier css
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nÃ©cessaire si appels depuis le serveur - dangereux en production
+	select xp_read_file(dba.getPath() || url); // renvoyer fichier css
 --
 END;
-COMMENT ON PROCEDURE "DBA"."http_getCSS" IS 'fournisseur de fichier .css (sous-répertoire CSS du site)';
+COMMENT ON PROCEDURE "DBA"."http_getCSS" IS 'fournisseur de fichier .css (sous-rÃ©pertoire CSS du site)';
 
 --
 
 CREATE PROCEDURE "DBA"."http_getIMG"(in url char(255))
-// renvoie le contenu de l image/graphique dont le nom (+ extension) est le paramètre url
+// renvoie le contenu de l image/graphique dont le nom (+ extension) est le paramÃ¨tre url
 BEGIN
 --
   call sa_set_http_header('Content-Type', 'image/png'); // header http
-    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nécessaire si appels depuis le serveur - dangereux en production
-	select xp_read_file(dba.getPath() || 'IMG\' || url);  // renvoyer image
+    Call sa_set_http_header('Access-Control-Allow-Origin', '*'); // pas nÃ©cessaire si appels depuis le serveur - dangereux en production
+	select xp_read_file(dba.getPath() || url);  // renvoyer image
 --
 END;
-COMMENT ON PROCEDURE "DBA"."http_getIMG" IS 'fournisseur de fichier graphique (sous-répertoire IMG du site)';
+COMMENT ON PROCEDURE "DBA"."http_getIMG" IS 'fournisseur de fichier graphique (sous-rÃ©pertoire IMG du site)';
 
 --------------- webservices de base -------------------------------------------------------------------
 
