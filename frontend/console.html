@@ -16,14 +16,13 @@
 					Veuiller indiquez si la console est portable ou non, choisisez votre marque dans la liste déroulante. </br>
 					Si nous avons oubliez une marque de console indiquez le nous et l'années.
 				</p>
-
+<form id="formulaireConsole">
 
 		<h3>Type de console</h3> <!--demande si l'as console est portable ou non -->
-			<input type="checkbox" name="portable" id="portable" /> <label for="portable">Portable</label>
+			<input type="radio" value="portable" name="portabilite" id="portable" /> <label for="portable">Portable</label>
 				</br>
-
-			<input type="checkbox" name="fixe" id="fixe" /> <label for="fixeh">Fixe</label><br />
-			<input type="checkbox" name="tous" id="tous" /> <label for="tous">Tous</label><br />
+			<input type="radio" value="fixe" name="portabilite" id="fixe" /> <label for="fix">Fixe</label><br />
+		<!--	<input type="checkbox" name="tous" id="tous" /> <label for="tous">Tous</label><br /> -->
 	
 
 		<h3>Quelle est la marque ?</h3>
@@ -33,18 +32,20 @@
 				<option value="atari">Atari</option>
 				<option value="Sony">Sony</option>
 				<option value="nintendo">Nintendo</option>
-				<option value="autre">Autre... </option>
 			
 			</select>
 
 	
 		<h3>Années</h3>
-			<input type="number" step="1" min="1950" max="2100" required> 
+			<input type="number" name="annee" step="1" min="1950" max="2100" required> 
 
 				</br>
 				</br>
 
-		
+		<input type="submit" value="Envoyer">
+
+
+</form>
 		<table>
 			<caption><h3>Résultats</h3></caption>
 		<thead>
@@ -79,8 +80,8 @@
 
 			<input type="checkbox" name="fixe" id="fixe" /> <label for="fix">Fixe</label><br />
 		<h3>Marque ?</h3>
+		<!-- Il écrit ce qu'il veut -->
 			<textarea>
-				<!-- Il écrit ce qu'il veut -->
 			</textarea>
 
 		<h3>Années de sortie ?</h3>
