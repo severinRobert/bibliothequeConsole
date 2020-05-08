@@ -1,7 +1,6 @@
-CREATE PROCEDURE "DBA"."getTableauConsole"( IN pMarque VARCHAR (100), IN pAnnee INTEGER, IN pPortabilite VARCHAR (40))/* */
-
+ALTER PROCEDURE "DBA"."getTableauConsole"(IN pMarque VARCHAR (100), IN pAnneeMin INTEGER, IN pAnneeMax INTEGER, IN pPortabilite VARCHAR (40))
 BEGIN
-    SELECT modele,nomMarque,typePortabilite,annee
+    SELECT modele,nomMarque,typePortabilite 
     FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite
-    WHERE nomMarque = pMarque AND annee = pAnnee AND portabilite.typePortabilite = pPortabilite
+    WHERE marque.nomMarque = pMarque AND  annee BETWEEN pAnneeMin AND pAnneeMax AND portabilite.typePortabilite = pPortabilite 
 END
