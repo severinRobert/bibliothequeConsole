@@ -11,7 +11,7 @@ function traitementFormulaire(event) {
 	let pMarque = form.marque.value;
 	let pAnneeMin = form.anneeMin.value;
 	let pAnneeMax = form.anneeMax.value;
-	let pPortabilite = form.portable.value;
+	let pPortabilite = form.portabilite.value;
 	let xhr = new XMLHttpRequest();   
 	xhr.open('get', "tableConsoleHtml?pMarque=" + pMarque + "&pAnneeMin=" + pAnneeMin + "&pAnneeMax=" + pAnneeMax + "&pPortabilite" + pPortabilite + '', true);
 	xhr.onload = () => { 
