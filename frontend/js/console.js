@@ -1,3 +1,6 @@
+"use strict";
+document.addEventListener('DOMContentLoaded', initPage); 
+
 function initPage() {
 	id("formulaireConsole").addEventListener('submit',traitementFormulaire);
 }
@@ -20,4 +23,5 @@ function traitementFormulaire(event) {
 function id(id) {
 	return document.getElementById(id);
 }
+
 
