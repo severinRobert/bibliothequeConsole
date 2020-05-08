@@ -9,13 +9,13 @@ function traitementFormulaire(event) {
 	event.preventDefault();
 	let form = event.target;
 	let pMarque = form.marque.value;
-	let pAnnee = form.annee.value;
+	let pAnneeMin = form.anneeMin.value;
+	let pAnneeMax = form.anneeMax.value;
 	let pPortabilite = form.portable.value;
 	let xhr = new XMLHttpRequest();   
-	xhr.open('get', "tableConsoleHtml?pMarque=" + pMarque + "&pAnnee=" + pAnnee + "&pPortabilite" + pPortabilite + '', true);
-	xhr.onload = () => { console.log(xhr.responseText);
+	xhr.open('get', "tableConsoleHtml?pMarque=" + pMarque + "&pAnneeMin=" + pAnneeMin + "&pAnneeMax=" + pAnneeMax + "&pPortabilite" + pPortabilite + '', true);
+	xhr.onload = () => { 
 		let rTableConsole = JSON.parse(xhr.responseText);
-		console.log(rTableConsole);
 	}
 	xhr.send();
 }
@@ -25,4 +25,13 @@ function id(id) {
 	return document.getElementById(id);
 }
 
-
+function tableHtml(table) {
+	let tableauHtml = "";
+	for(i in table) {
+		for(j in table[i]) {
+			tableauHtml += "<td>" + table[i][j] + "</td>";
+		}
+		tableauHtml = "<td>" + tableauHtml + "</tr>";
+	}
+	return tableauHtml;
+}
