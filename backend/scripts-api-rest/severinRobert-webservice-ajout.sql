@@ -1,32 +1,28 @@
-ALTER PROCEDURE "DBA"."ajoutConsole"( IN pMarque VARCHAR (100), IN pAnnee INTEGER, IN pPortabilite VARCHAR (40), in pModele VARCHAR (100) )
+CREATE  PROCEDURE "DBA"."ajoutConsole"( IN pMarque VARCHAR (100), IN pAnnee INTEGER, IN pPortabilite VARCHAR (40), in pModele VARCHAR (100) )
 
 BEGIN
     DECLARE pIdPortabilite INTEGER;
     DECLARE pIdMarque INTEGER;
+    SET pIdMarque = 1;
 
     IF pPortable = 'fixe'
-            SET pIdPortabilite = 1;
+            {SET pIdPortabilite = 1;}
     IF pPortable = 'portable'
-            SET pIdPortabilite = 2;
+            {SET pIdPortabilite = 2;}
 
-    IF pMarque = 'Nintendo' 
-            SET pIdMarque = 1;
-    IF pMarque = 'Sony'
-            SET pIdMarque = 2;
-    IF pMarque = 'Microsoft'
-            SET pIdMarque = 3;
-    IF pMarque = 'Atari'
-            SET pIdMarque = 4;
-    ELSE
+    WHILE pMarque != (SELECT nomMarque FROM marques WHERE idMarque = pIdMarque) AND pIdMarque =< count(marques)
+        pIdMarque += 1;
+    IF pMarque != (SELECT nomMarque FROM marques WHERE idMarque = pIdMarque)
         INSERT INTO marques
-            (idMarque, nomMarque)
-            VALUES 
-            (5,pMarque);
+            (idMarque,nomMarque)
+            VALUES
+            (pIdMarque,pMarque);
+
 
     INSERT INTO consoles
-        (idPortabilite, idMarque, modele, annee)
+        (idPortabilite, idMarque, modele, annee, idSecurite)
         VALUES 
-        (pIdPortabilite,pIdMarque,pModele,pAnnee);
+        (pIdPortabilite,pIdMarque,pModele,pAnnee,0);
 
 END
 
