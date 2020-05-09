@@ -11,10 +11,12 @@ CREATE TABLE marques (
     );
 
 CREATE TABLE consoles (
+      idConsole int NOT NULL DEFAULT AUTOINCREMENT ,
       idPortabilite INTEGER NOT NULL,
       idMarque INTEGER NOT NULL,
       modele VARCHAR(100) NULL,       
       annee INT,
       CONSTRAINT fk_consoles_portabilite FOREIGN KEY (idPortabilite) REFERENCES DBA.portabilite(IdPortabilite),	
-      CONSTRAINT fk_consoles_marque FOREIGN KEY (idMarque) REFERENCES DBA.marques(IdMarque)
+      CONSTRAINT fk_consoles_marque FOREIGN KEY (idMarque) REFERENCES DBA.marques(IdMarque),
+      CONSTRAINT pk_consoles PRIMARY KEY (idConsole) 
     );
