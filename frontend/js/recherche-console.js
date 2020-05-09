@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded',initPage);
 
 function initPage (){
-	document.getElementById('formulaireConsole').addEventListener('submit',traitementFormulaire);
+	id('formulaireConsole').addEventListener('submit',traitementFormulaire);
 }
 
 function traitementFormulaire (event){
@@ -17,7 +17,7 @@ function traitementFormulaire (event){
 	{
 		let xhr2 = new XMLHttpRequest();
 		xhr2.open('get' ,`tableConsoleHtmlMarque?pMarque=${pMarque}`,true );
-		xhr2.onload = () => { console.log(xhr2);
+		xhr2.onload = () => { console.log(xhr2.responseText);
 			let rTableConsole = JSON.parse(xhr2.responseText);
 			let table = tableHtml(rTableConsole);
 
@@ -50,7 +50,7 @@ function traitementFormulaire (event){
 		 				let tableau = tableHtml(rTableConsole);
 
 		 				id("result").innerHTML += tableau;
-						id("erreurDate").innerText = 'Champs dâte ignorer!';
+						id("erreurDate").innerText = 'Champs date ignorer!';
 		 			}
 		 			else {
 		 				id("erreurDate").innerText = `La marque ${pMarque} n'as pas de consoles ${pPortabilite}` ;
