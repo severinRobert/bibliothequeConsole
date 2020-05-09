@@ -9,21 +9,21 @@
 	<body>
 
 <!--recherche de console-->
-	<fieldset>
-		<legend><h2>Console</h2></legend>
-			<p>
-				Veuiller indiquez si la console est portable ou non, choisisez votre marque dans la liste déroulante. </br>
-				Si nous avons oubliez une marque de console indiquez le nous et l'années.
-			</p>
 
-		<form id="formulaireConsole">
+		<fieldset>
+			<legend><h2>Console</h2></legend>
+				<p>
+					Veuiller indiquez si la console est portable ou non, choisisez votre marque dans la liste déroulante. </br>
+					Si nous avons oubliez une marque de console indiquez le nous et l'années.
+				</p>
+<form id="formulaireConsole">
 
-		<h3>Type de console</h3> 
-
-			<!--demande si l'as console est portable ou non -->
+		<h3>Type de console</h3> <!--demande si l'as console est portable ou non -->
 			<input type="radio" value="portable" name="portabilite" id="portable" /> <label for="portable">Portable</label>
 				</br>
-			<input type="radio" value="fixe" name="portabilite" id="fixe" /> <label for="fixe">Fixe</label>
+			<input type="radio" value="fixe" name="portabilite" id="fixe" /> <label for="fix">Fixe</label><br />
+			<input type="radio" value="tous" name="portabilite" id="tous" checked /> <label for="tous">Tous</label><br />
+	
 
 		<h3>Quelle est la marque ?</h3>
 			<select name="marque" id="marque">
@@ -32,22 +32,27 @@
 				<option value="atari">Atari</option>
 				<option value="Sony">Sony</option>
 				<option value="nintendo">Nintendo</option>
+				<!-- <option value="tous">Tous</option> -->
 			
 			</select>
 
 	
 		<h3>Années</h3>
-			<label for="anneeMin">Entre </label>
-			<input type="number" id="anneeMin" name="anneeMin" step="1" min="1950" max="2100" required>
-			<label for="anneeMax"> et </label>
-			<input type="number" id="anneeMax" name="anneeMax" step="1" min="1950" max="2100" required> 
+			<input type="number" name="annee" step="1" min="1950" max="2100" > 
 
 				</br>
 				</br>
 
-		<input type="submit" value="Envoyer">
+
+
+	<input type="submit" value="tableau"/>
+
+	<!--	 <input type="button" value="Generate a table." onclick="generate_table()"> -->
 
 </form>
+
+<div id="erreurDate"></div>
+
 		<table>
 			<caption><h3>Résultats</h3></caption>
 		<thead>
@@ -64,8 +69,8 @@
 		<!-- suite -->	
 
 		</tbody>
-			
 		</table>
+			
 
 	</fieldset>
 
