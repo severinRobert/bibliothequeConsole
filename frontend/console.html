@@ -70,21 +70,25 @@
 		<fieldset>
 			<legend><h2>Console oubliée</h2></legend>
 			<p>Indiquez les caractéristiques de la console oublié</p>
-			<div>
+			<div id="conteneurAjout">
 				<form id="ajoutConsole">
 					<h3>Type de console ?</h3>
-						<input type="checkbox" name="portable" id="portable" /> <label for="portable">Portable</label><br />
-						<input type="checkbox" name="fixe" id="fixe" /> <label for="fix">Fixe</label><br />
+						<input type="radio" value="portable" name="portabilite" id="ajoutPortable" /> <label for="portable">Portable</label><br />
+						<input type="radio" value="fixe" name="portabilite" id="ajoutFixe" checked/> <label for="fixe">Fixe</label><br />
 
 					<h3>Marque ?</h3>
 						<!-- indique la marque -->
-						<textarea>
-						</textarea>
+						<textarea name="marque"></textarea>
+
+					<h3>Modèle ?</h3>
+						<!-- indique le modele -->
+						<textarea name="modele"></textarea>
 
 					<h3>Année de sortie ?</h3>
-						<input type="number" step="1" min="1950" max="2100" required>
+						<input type="number" name="annee" step="1" min="1950" max="2100" required>
 						<br /><br />
 						<input type="submit" value="Envoyer">
+						<div id="infoAjout"></div>
 				</form>
 			</div>
 		</fieldset>
