@@ -1,110 +1,89 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="utf-8">
-	<title>console</title>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bibliothèque de Console</title>
 		<link rel="stylesheet" type="text/css" href="css/frontend/css/console.css">
 		<script src="js/frontend/js/recherche-console.js"></script>
 		<script src="js/frontend/js/suppression-console.js"></script>
 		<script src="js/frontend/js/insertion-console.js"></script>
 		<script src="js/frontend/js/triage-console.js"></script>
-		</head>
+	</head>
 	<body>
 
-<!--recherche de console-->
+	<!-- Recherche de console -->
 
 		<fieldset>
 			<legend><h2>Console</h2></legend>
-				<p>
-					Veuiller indiquez si la console est portable ou non, choisisez votre marque dans la liste déroulante. </br>
-					Si nous avons oubliez une marque de console indiquez le nous et l'années.
-				</p>
+			<p>
+				Veuiller indiquez si la console est portable ou non, choisisez votre marque dans la liste déroulante. </br>
+				Si nous avons oubliez une marque de console indiquez le nous et l'années.
+			</p>
 
 
-<div id="conteneur">
-<form id="formulaireConsole">
+			<div id="conteneur">
+				<form id="formulaireConsole">
 
-		<h3>Type de console</h3> <!--demande si l'as console est portable ou non -->
-			<input type="radio" value="portable" name="portabilite" id="portable" /> <label for="portable">Portable</label>
-				</br>
-			<input type="radio" value="fixe" name="portabilite" id="fixe" /> <label for="fix">Fixe</label><br />
-			<input type="radio" value="tous" name="portabilite" id="tous" checked /> <label for="tous">Tous</label><br />
+					<h3>Type de console</h3> <!-- demande si l'as console est portable ou non -->
+						<input type="radio" value="portable" name="portabilite" id="portable" /> <label for="portable">Portable</label><br />
+						<input type="radio" value="fixe" name="portabilite" id="fixe" /> <label for="fix">Fixe</label><br />
+						<input type="radio" value="tous" name="portabilite" id="tous" checked /> <label for="tous">Tous</label><br />
 	
 
-		<h3>Quelle est la marque ?</h3>
-			<select name="marque" id="marque">
+					<h3>Quelle est la marque ?</h3> <!-- demande la marque -->
+						<select name="marque" id="marque">
+							<option value="microsoft">Microsoft</option>
+							<option value="atari">Atari</option>
+							<option value="Sony">Sony</option>
+							<option value="nintendo">Nintendo</option>
+							<!-- <option value="tous">Tous</option> -->
+						</select>
 
-				<option value="microsoft">Microsoft</option>
-				<option value="atari">Atari</option>
-				<option value="Sony">Sony</option>
-				<option value="nintendo">Nintendo</option>
-				<!-- <option value="tous">Tous</option> -->
-			
-			</select>
+					<h3>Années</h3> <!-- demande l'année -->
+						<input type="number" name="annee" step="1" min="1950" max="2100" > 
+						<br />
+						<br />
+						<input type="submit" value="tableau"/>
+						<input type="button" onclick='window.location.reload(false)' value="Rafraichir"/>
+				</form>
+				<div id="erreurDate"></div>
 
-	
-		<h3>Années</h3>
-			<input type="number" name="annee" step="1" min="1950" max="2100" > 
+				<table> <!-- Affichage des resutltats -->
+					<caption><h3>Résultats</h3></caption>
+					<thead>
+						<tr>
+							<th class="element">Marque</th>
+							<th class="element">Modele</th>
+							<th class="element">Année</th>
+							<th class="element">Portabilité</th>
+						</tr>
+					</thead>
+					<tbody id="result">
+					<!-- information de la base de données -->	
+					</tbody>
+				</table>
+			</div>	
 
-				</br>
-				</br>
-
-
-
-	<input type="submit" value="tableau"/>
-
-	<!--	 <input type="button" value="Generate a table." onclick="generate_table()"> -->
-
-</form>
-
-<div id="erreurDate"></div>
-
-		<table>
-			<caption><h3>Résultats</h3></caption>
-		<thead>
-			<tr>
-				<th class="element">Marque</th>
-				<th class="element">Modele</th>
-				<th class="element">Années</th>
-				<th class="element">Portabilité</th>
-			</tr>
-		</thead>
-
-		<tbody id="result">
-			
-		<!-- suite -->	
-
-		</tbody>
-		</table>
-	</div>	
-
-	</fieldset>
-
-<!--Console oublier-->
-
-		<fieldset>
-		<legend><h2>Console oublier</h2></legend>
-			<p>Iniquez les caractéristiques de la console oublié</p>
-
-		<h3>Type de console ?</h3>
-			<input type="checkbox" name="portable" id="portable" /> <label for="portable">Portable</label>
-				
-				</br>
-
-			<input type="checkbox" name="fixe" id="fixe" /> <label for="fix">Fixe</label><br />
-		<h3>Marque ?</h3>
-		<!-- Il écrit ce qu'il veut -->
-			<textarea>
-			</textarea>
-
-		<h3>Années de sortie ?</h3>
-			<input type="number" step="1" min="1950" max="2100" required> 
-
-				</br>
-				</br>
-
-			<input type="submit" value="Envoyer">
 		</fieldset>
 
+<!-- Ajout d'une console -->
+
+		<fieldset>
+			<legend><h2>Console oubliée</h2></legend>
+			<p>Indiquez les caractéristiques de la console oublié</p>
+
+			<h3>Type de console ?</h3>
+				<input type="checkbox" name="portable" id="portable" /> <label for="portable">Portable</label><br />
+				<input type="checkbox" name="fixe" id="fixe" /> <label for="fix">Fixe</label><br />
+
+			<h3>Marque ?</h3>
+				<!-- indique la marque -->
+				<textarea>
+				</textarea>
+
+			<h3>Année de sortie ?</h3>
+				<input type="number" step="1" min="1950" max="2100" required><br /><br />
+				<input type="submit" value="Envoyer">
+		</fieldset>
 	</body>
 </html>
