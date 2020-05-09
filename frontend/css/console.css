@@ -1,57 +1,52 @@
-
 fieldset
-{
-	background-color: #25FDE9 ; 
-	box-shadow: 6px 6px 6px black;
-}
+	{
+		background-color: #25FDE9 ; 
+		box-shadow: 6px 6px 6px black;
+	}
 
 h2
-{
-	font-style: italic;
-}
+	{
+		font-style: italic;
+	}
 
 th
-{
-	font-style: italic;
-	text-decoration: underline red;
+	{
+		font-style: italic;
+		text-decoration: underline red;
 
-}
+	}
 
 #resulte
-{
-	text-decoration:  red;
-}
+	{
+		text-decoration:  red;
+	}
 
 form
-{
+	{
 
-width: auto;
-border: 1px solid black;
-text-align: justify;
-padding: 12px;
-margin: 50px;
-border-radius: 9px;/*<= mais un bordure arondie au formulaire*/
-/*color: ; <= peux chnager la couleur du formulaire en lui même. */
+		width: auto;
+		border: 1px solid black;
+		text-align: justify;
+		padding: 12px;
+		margin: 50px;
+		border-radius: 9px;/*<= mais un bordure arondie au formulaire*/
+		/*color: ; <= peux chnager la couleur du formulaire en lui même. */
 
-}
+	}
 
 table
-{
-
-width: auto;
-border: 1px solid black;
-text-align: justify;
-padding: 12px;
-margin: 50px;
-border-radius: 9px;
-
-} 
+	{
+		width: auto;
+		border: 1px solid black;
+		text-align: justify;
+		padding: 12px;
+		margin: 50px;
+		border-radius: 9px;
+	} 
 
 #conteneur
-{
-	display: flex;
-	flex-wrap: nowrap;
-
-
-}
+	{
+		display: flex;
+		flex-wrap: nowrap;
+	}
 
