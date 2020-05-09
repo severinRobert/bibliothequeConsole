@@ -32,4 +32,4 @@ END
 
 /* *********************************************** */
 
-CREATE SERVICE 
+CREATE SERVICE "ajoutConsole" TYPE 'Raw' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call ajoutConsole(:pMarque,:pAnnee,:pPortabilite,:pModele);
