@@ -2,39 +2,32 @@ CREATE PROCEDURE "DBA"."getTableauConsole"( IN pMarque VARCHAR (100), IN pAnnee 
 
 BEGIN
 	SELECT modele,nomMarque,typePortabilite,annee,idConsole
-    FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
-    WHERE nomMarque = pMarque AND annee = pAnnee AND portabilite.typePortabilite = pPortabilite
+    	FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
+    	WHERE nomMarque = pMarque AND annee = pAnnee AND portabilite.typePortabilite = pPortabilite
 END
-
-
 
 
 CREATE PROCEDURE "DBA"."getTableauConsoleDate"( IN pMarque VARCHAR (100),IN pPortabilite VARCHAR (40))/* */
 
 BEGIN
 	SELECT modele,nomMarque,typePortabilite,annee,idConsole
-    FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
-    WHERE nomMarque = pMarque AND portabilite.typePortabilite = pPortabilite
+    	FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
+    	WHERE nomMarque = pMarque AND portabilite.typePortabilite = pPortabilite
 END
 
 
-
-
-CREATE PROCEDURE "DBA"."getTableauConsoleMarque"( IN pMarque VARCHAR (100))/* */
+CREATE PROCEDURE "DBA"."getTableauConsoleMarque"( IN pMarque VARCHAR (100))
 
 BEGIN
 	SELECT modele,nomMarque,typePortabilite,annee,idConsole
-    FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
-    WHERE nomMarque = pMarque
+    	FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
+    	WHERE nomMarque = pMarque
 END
+
 /**********************************************************************************************************************************/
 
+CREATE SERVICE "tableConsoleHtml" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getTableauConsole(:pMarque,:pAnnee,:pPortabilite);
 
-call getTableauConsole(:pMarque,:pAnnee,:pPortabilite)
+CREATE SERVICE "tableConsoleHtmlDate" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getTableauConsoleDate(:pMarque,:pPortabilite);
 
-
-call getTableauConsoleDate(:pMarque,:pPortabilite)
-
-
-
-call getTableauConsoleMarque(:pMarque)
+CREATE SERVICE "tableConsoleHtmlMarque" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getTableauConsoleMarque(:pMarque);
