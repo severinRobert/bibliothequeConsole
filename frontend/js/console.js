@@ -5,6 +5,7 @@ function initPage (){
     id('formulaireConsole').addEventListener('submit',traitementFormulaire);
     id('submitComment').addEventListener('submit',addComment)
     id("ajoutConsole").addEventListener('submit',traitementAjoutConsole);
+    ajoutMarqueChoix();
 }
 
 function id (idDom){
