@@ -14,19 +14,19 @@
 	<!-- Recherche de console -->
 
 		<fieldset>
-			<legend><h2>Console</h2></legend>
+			<legend><h2>Recherche de console</h2></legend>
 			<p>
 				Veuiller indiquez si la console est portable ou non, choisisez votre marque dans la liste déroulante. </br>
 				Si nous avons oubliez une marque de console indiquez le nous et l'années.
 			</p>
 
 
-			<div id="conteneur">
+			<div id="conteneurRecherche">
 				<form id="formulaireConsole">
 
 					<h3>Type de console</h3> <!-- demande si l'as console est portable ou non -->
 						<input type="radio" value="portable" name="portabilite" id="portable" /> <label for="portable">Portable</label><br />
-						<input type="radio" value="fixe" name="portabilite" id="fixe" /> <label for="fix">Fixe</label><br />
+						<input type="radio" value="fixe" name="portabilite" id="fixe" /> <label for="fixe">Fixe</label><br />
 						<input type="radio" value="tous" name="portabilite" id="tous" checked /> <label for="tous">Tous</label><br />
 	
 
@@ -42,8 +42,8 @@
 					<h3>Années</h3> <!-- demande l'année -->
 						<input type="number" name="annee" step="1" min="1950" max="2100" > 
 						<br /><br />
-						<input type="submit" value="tableau"/>
-						<input type="button" onclick='window.location.reload(false)' value="Rafraichir"/>
+						<input type="submit" class="bouton" value="Rechercher"/>
+						<input type="button" class="bouton" onclick='window.location.reload(false)' value="Rafraichir"/>
 				</form>
 				<div id="erreurDate"></div>
 
@@ -68,8 +68,8 @@
 <!-- Ajout d'une console -->
 
 		<fieldset>
-			<legend><h2>Console oubliée</h2></legend>
-			<p>Indiquez les caractéristiques de la console oublié</p>
+			<legend><h2>Ajout d'une console</h2></legend>
+			<p>Indiquez les caractéristiques de la console</p>
 			<div id="conteneurAjout">
 				<form id="ajoutConsole">
 					<h3>Type de console ?</h3>
@@ -78,18 +78,18 @@
 
 					<h3>Marque ?</h3>
 						<!-- indique la marque -->
-						<textarea name="marque"></textarea>
+						<textarea name="marque" required></textarea>
 
 					<h3>Modèle ?</h3>
 						<!-- indique le modele -->
-						<textarea name="modele"></textarea>
+						<textarea name="modele" required></textarea>
 
 					<h3>Année de sortie ?</h3>
 						<input type="number" name="annee" step="1" min="1950" max="2100" required>
 						<br /><br />
-						<input type="submit" value="Envoyer">
-						<div id="infoAjout"></div>
+						<input type="submit" class="bouton" value="Ajouter">
 				</form>
+				<div id="infoAjout"></div>
 			</div>
 		</fieldset>
 	</body>
