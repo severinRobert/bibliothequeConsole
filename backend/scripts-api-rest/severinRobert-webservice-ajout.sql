@@ -6,22 +6,22 @@ BEGIN
         (pIdMarque, pAnnee, pIdPortabilite, pModele)
 END;
 
-CREATE PROCEDURE "DBA"."ajoutMarque"( in pMarque VARCHAR (100) )
+CREATE PROCEDURE "DBA"."ajoutMarque"( in pMarque VARCHAR (100) )      /* ajoute la marque à la DB */
 BEGIN
-	INSERT INTO marques         /* ajoute la marque à la DB */
+	INSERT INTO marques        
         (nomMarque)
         VALUES 
         (pMarque);
 END;
 
-CREATE PROCEDURE "DBA"."getIdMarque"( in pMarque VARCHAR (100) )
+CREATE PROCEDURE "DBA"."getIdMarque"( in pMarque VARCHAR (100) )   /* trouve l'id de la marque encodée */
 BEGIN
-	SELECT idMarque         /**/
+    SELECT idMarque        
     FROM marques
     WHERE nomMarque = pMarque
 END;
 
-CREATE PROCEDURE "DBA"."verifExiste"( in pModele VARCHAR (100) )
+CREATE PROCEDURE "DBA"."verifExiste"( in pModele VARCHAR (100) )  /*  */
 BEGIN
 	SELECT modele 
     FROM consoles
@@ -33,6 +33,12 @@ BEGIN
 	SELECT nomMarque
     FROM marques
     WHERE nomMarque = pMarque
+END;
+
+CREATE PROCEDURE "DBA"."tableauMarque"()
+BEGIN
+	SELECT nomMarque 
+    FROM marques
 END;
 
 
