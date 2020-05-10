@@ -7,6 +7,17 @@ VALUES
 (newComment)
 END;
 
+
+CREATE procedure "dba"."getConsoleComment"()
+
+BEGIN 
+
+select idComment, comments from DBA.consoleComment
+
+END;
+
+
+
 /***************************************************************************************************************************************/
 
 create service "addCommentService"
@@ -15,6 +26,15 @@ AUTHORIZATION OFF
 USER "DBA" 
 URL ON 
 METHODS 'get' 
-as call addComment(:newComment)
+as call addComment(:newComment);
+
+
+create service "tableConsoleComment" 
+type 'JSON'
+AUTHORIZATION OFF
+USER "DBA"
+URL ON 
+METHODS 'GET' 
+AS call getConsoleComment();
 
 
