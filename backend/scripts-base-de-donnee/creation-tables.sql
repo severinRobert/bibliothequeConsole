@@ -24,7 +24,7 @@ CREATE TABLE consoles (
 
 CREATE TABLE consoleComment (
 idComment integer not null default autoincrement,
-comments varchar(999)
+commentaire varchar(999)
 );
 
 
