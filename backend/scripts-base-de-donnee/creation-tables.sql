@@ -5,7 +5,7 @@ CREATE TABLE portabilite (
     );
 
 CREATE TABLE marques (
-      idMarque INTEGER NOT NULL,
+      idMarque int NOT NULL DEFAULT AUTOINCREMENT,
       nomMarque VARCHAR(100) NULL,
       CONSTRAINT pk__marques PRIMARY KEY ( idMarque )
     );
@@ -13,7 +13,7 @@ CREATE TABLE marques (
 CREATE TABLE consoles (
       idConsole int NOT NULL DEFAULT AUTOINCREMENT ,
       idPortabilite INTEGER NOT NULL,
-      idMarque INTEGER NOT NULL,
+      idMarque int NOT NULL DEFAULT AUTOINCREMENT,
       modele VARCHAR(100) NULL,       
       annee INT,
       CONSTRAINT fk_consoles_portabilite FOREIGN KEY (idPortabilite) REFERENCES DBA.portabilite(IdPortabilite),	
