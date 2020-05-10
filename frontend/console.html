@@ -38,15 +38,10 @@
 
 					<h3>Quelle est la marque ?</h3> <!-- demande la marque -->
 						<select name="marque" id="marque">
-							<option value="microsoft">Microsoft</option>
-							<option value="atari">Atari</option>
-							<option value="Sony">Sony</option>
-							<option value="nintendo">Nintendo</option>
-							<!-- <option value="tous">Tous</option> -->
 						</select>
 
 					<h3>Années</h3> <!-- demande l'année -->
-						<input type="number" name="annee" step="1" min="1950" max="2100" > 
+						<input type="number" class="text" name="annee" step="1" min="1950" max="2100" > 
 						<br /><br />
 						<input type="submit" class="bouton" value="Rechercher"/>
 						<input type="button" class="bouton" onclick='window.location.reload(false)' value="Rafraichir"/>
@@ -84,14 +79,14 @@
 
 					<h3>Marque ?</h3>
 						<!-- indique la marque -->
-						<textarea name="marque" required></textarea>
+						<textarea name="marque" class="text" required></textarea>
 
 					<h3>Modèle ?</h3>
 						<!-- indique le modele -->
-						<textarea name="modele" required></textarea>
+						<textarea name="modele" class="text" required></textarea>
 
 					<h3>Année de sortie ?</h3>
-						<input type="number" name="annee" step="1" min="1950" max="2100" required>
+						<input type="number" name="annee" class="text" step="1" min="1950" max="2100" required>
 						<br /><br />
 						<input type="submit" class="bouton" value="Ajouter">
 				</form>
