@@ -1,0 +1,20 @@
+
+create procedure "dba"."addComment"(IN newComment varchar(999))
+BEGIN
+INSERT INTO consoleComment
+(comments)
+VALUES 
+(newComment)
+END;
+
+/***************************************************************************************************************************************/
+
+create service "addCommentService"
+TYPE 'JSON'
+AUTHORIZATION OFF 
+USER "DBA" 
+URL ON 
+METHODS 'get' 
+as call addComment(:newComment)
+
+
