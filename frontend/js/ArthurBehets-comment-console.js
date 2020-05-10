@@ -27,15 +27,10 @@ function addComment(event){
     event.preventDefault();
     let form = event.target;
     let newComment = (form.newComment.value);
-    console.log(newComment);
     let newCommentXhr = new XMLHttpRequest;
-    console.log('ok');
     newCommentXhr.open('get', `addCommentService?newComment=${newComment}`, true);
-    console.log('ok2');
     newCommentXhr.onload = () =>{
-
     }
-    console.log("ok3");
     newCommentXhr.send();
-    console.log('ok4');
+    showComment();
 }
