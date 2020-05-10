@@ -4,7 +4,7 @@ BEGIN
         (idMarque, annee, idPortabilite, modele)
         VALUES
         (pIdMarque, pAnnee, pIdPortabilite, pModele)
-END
+END;
 
 CREATE PROCEDURE "DBA"."ajoutMarque"( in pMarque VARCHAR (100) )
 BEGIN
@@ -12,28 +12,28 @@ BEGIN
         (nomMarque)
         VALUES 
         (pMarque);
-END
+END;
 
 CREATE PROCEDURE "DBA"."getIdMarque"( in pMarque VARCHAR (100) )
 BEGIN
 	SELECT idMarque         /**/
     FROM marques
     WHERE nomMarque = pMarque
-END
+END;
 
 CREATE PROCEDURE "DBA"."verifExiste"( in pModele VARCHAR (100) )
 BEGIN
 	SELECT modele 
     FROM consoles
     WHERE modele = pModele
-END
+END;
 
 CREATE PROCEDURE "DBA"."verifMarque"( in pMarque VARCHAR (100) )
 BEGIN
 	SELECT nomMarque
     FROM marques
     WHERE nomMarque = pMarque
-END
+END;
 
 
 /* *********************************************** */
