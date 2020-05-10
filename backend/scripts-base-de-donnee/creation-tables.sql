@@ -20,3 +20,11 @@ CREATE TABLE consoles (
       CONSTRAINT fk_consoles_marque FOREIGN KEY (idMarque) REFERENCES DBA.marques(IdMarque),
       CONSTRAINT pk_consoles PRIMARY KEY (idConsole) 
     );
+    
+
+CREATE TABLE consoleComment (
+idComment integer not null default autoincrement,
+comments varchar(999)
+);
+
+
