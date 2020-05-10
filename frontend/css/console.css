@@ -47,7 +47,12 @@ table
 		border-radius: 9px;
 	} 
 
-#conteneurRecherche
+#erreurDate 
+	{
+		color: red;
+	}
+
+#conteneurRecherche, #conteneurAjout
 	{
 		display: flex;
 		flex-wrap: nowrap;
