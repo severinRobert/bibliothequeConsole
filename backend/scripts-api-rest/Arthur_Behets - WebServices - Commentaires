@@ -2,7 +2,7 @@
 create procedure "dba"."addComment"(IN newComment varchar(999))
 BEGIN
 INSERT INTO consoleComment
-(comments)
+(commentaire)
 VALUES 
 (newComment)
 END;
@@ -12,7 +12,7 @@ CREATE procedure "dba"."getConsoleComment"()
 
 BEGIN 
 
-select idComment, comments from DBA.consoleComment
+select idComment, commentaire from DBA.consoleComment
 
 END;
 
