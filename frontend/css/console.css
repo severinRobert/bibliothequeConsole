@@ -44,9 +44,38 @@ table
 		border-radius: 9px;
 	} 
 
-#conteneur
+#conteneurRecherche
 	{
 		display: flex;
 		flex-wrap: nowrap;
 	}
 
+#infoAjout
+	{
+		width: auto;
+		border: 1px solid black;
+		text-align: justify;
+		padding: 12px;
+		margin: 50px;
+		border-radius: 9px;
+		animation-duration: 0.5s;
+		animation-iteration-count: infinite;
+	}
+
+@keyframes shadow {
+	0% { border-color: black; }
+	50% { border-color: red; }
+	100% { border-color: black; }
+}
+
+.bouton {
+	border-radius: 5px;
+	border: 1px lime solid;
+	background-color: #7CFC00;
+	margin-bottom: 5px;
+	padding: 3px 8px;
+}
+
+.bouton:hover {
+	background-color: #fb9902;
+}
