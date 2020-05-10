@@ -33,7 +33,9 @@ function traitementAjoutConsole(event) {
 
 					let rAjoutMarque = new XMLHttpRequest();
 					rAjoutMarque.open('get', `ajoutMarque?pMarque=${pMarque}`,true);
-					rAjoutMarque.onload = () => {}
+					rAjoutMarque.onload = () => {
+						ajoutMarqueChoix();
+					}
 					rAjoutMarque.send()
 				} 
 				let rIdMarque = new XMLHttpRequest();
@@ -55,4 +57,20 @@ function traitementAjoutConsole(event) {
 		}
 	}
 	rExiste.send()
+}
+
+
+function ajoutMarqueChoix() {
+	let  tableauMarque = new XMLHttpRequest();
+	tableauMarque.open('get' ,"tableauMarque?",true );
+	tableauMarque.onload = () => {
+		let rTableMarque = JSON.parse(tableauMarque.responseText);
+		console.log(rTableMarque);
+		let tableHtmlMarque = "";
+		for(let i in rTableMarque)	{
+			tableHtmlMarque += `<option value="${rTableMarque[i].nomMarque}">${rTableMarque[i].nomMarque}</option>`
+		}
+		id("marque").innerHTML = tableHtmlMarque;
+	}
+	tableauMarque.send();
 }
