@@ -1,5 +1,9 @@
 "use strict";
 
+/**
+ * Appelle le service Web qui permet d'ajouter une console
+ * @param {event} evenement qui a appelé la fonction
+*/
 
 function traitementAjoutConsole(event) {
 	event.preventDefault();
@@ -7,11 +11,48 @@ function traitementAjoutConsole(event) {
 	let pMarque = form.marque.value;
 	let pAnnee = form.annee.value;
 	let pPortabilite = form.portabilite.value;
-	let pModele = form.modele.value; console.log(pModele + " " + pMarque + " " + pAnnee + " " + pPortabilite);
-	let rAjout = new XMLHttpRequest();
+	let pModele = form.modele.value;
+	let pIdMarque = 0;
+	let pIdPortabilite = 0;
+	let rExiste = new XMLHttpRequest();
 
-	rAjout.open('get', "ajoutConsole?pMarque=" + pMarque + "&pAnnee=" + pAnnee + "&pPortabilite" + pPortabilite + "&pModele" + pModele + '', true);
-	rAjout.onload = () => {
+	rExiste.open('get', `verifExiste?pModele=${pModele}` + '', true);	//vérifie que la console n'éxiste pas déjà dans la DB									
+	rExiste.onload = () => {
+
+		if(rExiste.responseText)	{
+			id("infoAjout").innerHTML += "L'ajout n'a pas pu se faire, la console existe déjà dans notre base de donnée.<br />";
+		} 
+		else {
+			let rMarque = new XMLHttpRequest();				
+			console.log("console OK");
+			rMarque.open('get', `verifMarque?pMarque=${pMarque}`, true);		//vérifie si la marque existe déjà dans la DB
+			rMarque.onload = () => {
+
+				if(!rMarque.responseText)	{
+					id("infoAjout").innerHTML += `Ajout de la marque ${pMarque}!<br />`;	//si la marque n'existe pas encore, on la crée
+
+					let rAjoutMarque = new XMLHttpRequest();
+					rAjoutMarque.open('get', `ajoutMarque?pMarque=${pMarque}`,true);
+					rAjoutMarque.onload = () => {}
+					rAjoutMarque.send()
+				} 
+				let rIdMarque = new XMLHttpRequest();
+				rIdMarque.open('get', `idMarque?pMarque=${pMarque}` + '',true);
+				rIdMarque.onload = () => {
+					console.log("id OK");
+					pIdMarque = rIdMarque.responseText;
+					let rAjoutConsole = new XMLHttpRequest();
+					pIdPortabilite = (pPortabilite == "fixe") ? 1 : 2;
+					rAjoutConsole.open('get',`ajoutConsole?pIdMarque=${pIdMarque}&pAnnee=${pAnnee}&pIdPortabilite=${pIdPortabilite}&pModele=${pModele}`,true)
+					rAjoutConsole.onload = () => {
+						id("infoAjout").innerHTML += `L'ajout de la console ${pModele} s'est bien effectué, merci de votre contribution !<br />`;
+					}
+					rAjoutConsole.send()
+				}
+				rIdMarque.send()
+			}
+			rMarque.send()	
+		}
 	}
-	rAjout.send();
+	rExiste.send()
 }
