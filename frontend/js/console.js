@@ -2,6 +2,11 @@
 document.addEventListener('DOMContentLoaded',initPage);
 
 function initPage (){
-    document.getElementById('formulaireConsole').addEventListener('submit',traitementFormulaire);
-    document.getElementById('submitComment').addEventListener('submit',addComment)
+    id('formulaireConsole').addEventListener('submit',traitementFormulaire);
+    id('submitComment').addEventListener('submit',addComment)
+    id("ajoutConsole").addEventListener('submit',traitementAjoutConsole);
+}
+
+function id (idDom){
+	return document.getElementById(idDom)
 }
