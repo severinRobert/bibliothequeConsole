@@ -5,8 +5,115 @@
 		<title>Bibliothèque de Console</title>
 		<link rel="stylesheet" type="text/css" href="css/frontend/css/console.css">
 		<script src="js/frontend/js/EmilienPerremans-recherche-console.js"></script>
+		<script src="js/frontend/js/Baptiste<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bibliothèque de Console</title>
+		<link rel="stylesheet" type="text/css" href="css/frontend/css/console.css">
+		<script src="js/frontend/js/EmilienPerremans-recherche-console.js"></script>
 		<script src="js/frontend/js/BaptisteFunck-suppression-console.js"></script>
 		<script src="js/frontend/js/SeverinRobert-insertion-console.js"></script>
+		<script src="js/frontend/js/console.js"></script>
+		<script src="js/frontend/js/ArthurBehets-comment-console.js"></script>
+	</head>
+	<body onload="showComment()">
+
+		<header>
+			<h1>Bibliothèque de consoles</h1>
+		</header>
+
+
+	<!-- Recherche de console -->
+
+		<fieldset>
+			<legend><h2>Recherche de console</h2></legend>
+			<p>
+				Veuiller indiquez si la console est portable ou non, choisisez votre marque dans la liste déroulante. </br>
+				Si nous avons oubliez une marque de console indiquez le nous et l'années.
+			</p>
+
+
+			<div id="conteneurRecherche">
+				<form id="formulaireConsole">
+
+					<h3>Type de console</h3> <!-- demande si l'as console est portable ou non -->
+						<input type="radio" value="portable" name="portabilite" id="portable" /> <label for="portable">Portable</label><br />
+						<input type="radio" value="fixe" name="portabilite" id="fixe" /> <label for="fixe">Fixe</label><br />
+						<input type="radio" value="tous" name="portabilite" id="tous" checked /> <label for="tous">Tous</label><br />
+	
+
+					<h3>Quelle est la marque ?</h3> <!-- demande la marque -->
+						<select name="marque" id="marque">
+						</select>
+
+					<h3>Années</h3> <!-- demande l'année -->
+						<input type="number" class="text" name="annee" step="1" min="1950" max="2100" > 
+						<br /><br />
+						<input type="submit" class="bouton" value="Rechercher"/>
+						<input type="button" class="bouton" onclick='window.location.reload(false)' value="Rafraichir"/>
+				</form>
+				<div id="erreurDate"></div>
+
+				<table> <!-- Affichage des resutltats -->
+					<caption><h3>Résultats</h3></caption>
+					<thead>
+						<tr>
+							<th class="element">Marque</th>
+							<th class="element">Modele</th>
+							<th class="element">Année</th>
+							<th class="element">Portabilité</th>
+						</tr>
+					</thead>
+					<tbody id="result">
+					<!-- information de la base de données -->	
+					</tbody>
+				</table>
+			</div>	
+
+		</fieldset>
+
+<!-- Ajout d'une console -->
+
+		<fieldset>
+			<legend><h2>Ajout d'une console</h2></legend>
+			<p>Indiquez les caractéristiques de la console</p>
+			<div id="conteneurAjout">
+				<form id="ajoutConsole">
+					<h3>Type de console ?</h3>
+						<input type="radio" value="portable" name="portabilite" id="ajoutPortable" /> <label for="portable">Portable</label><br />
+						<input type="radio" value="fixe" name="portabilite" id="ajoutFixe" checked/> <label for="fixe">Fixe</label><br />
+
+					<h3>Marque ?</h3>
+						<!-- indique la marque -->
+						<input type="text" name="marque" maxlength="25" class="text" required></input>
+
+					<h3>Modèle ?</h3>
+						<!-- indique le modele -->
+						<input type="text" name="modele" maxlength="25" class="text" required></input>
+
+					<h3>Année de sortie ?</h3>
+						<input type="number" name="annee" class="text" step="1" min="1950" max="2100" required>
+						<br /><br />
+						<input type="submit" class="bouton" value="Ajouter">
+				</form>
+				<div id="infoAjout"></div>
+			</div>
+		</fieldset>
+	</body>
+	<footer id ="footer">
+    		<fieldset>
+    			<legend><h2>Ajouter un commantaire</h2></legend>
+        		<div id="commentPlace"></div>
+        			<form id="submitComment">
+            				<label for="newComment">Ecrire un commentaire</label>
+            				<input type ="text" id="newComment" name ="newComment" required maxlength="999">
+           				<label for="sendComment"></label>
+            				<input name ="sendComment" id="sendComment" type="submit" value="Envoyer">
+        			</form>
+    		</fieldset>
+	</footer>
+</html>ertion-console.js"></script>
 		<script src="js/frontend/js/console.js"></script>
 		<script src="js/frontend/js/ArthurBehets-comment-console.js"></script>
 	</head>
