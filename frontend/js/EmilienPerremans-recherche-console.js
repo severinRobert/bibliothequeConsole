@@ -1,4 +1,4 @@
-"usestrict"
+"usestrict";
 
 function traitementFormulaire (event){
 	event.preventDefault();
