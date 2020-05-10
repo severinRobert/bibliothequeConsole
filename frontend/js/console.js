@@ -1,4 +1,4 @@
-usestrict;
+"usestrict";
 document.addEventListener('DOMContentLoaded',initPage);
 
 function initPage (){
