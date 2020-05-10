@@ -41,6 +41,11 @@ BEGIN
     FROM marques
 END;
 
+CREATE PROCEDURE "DBA"."tableauMarque"(  )
+BEGIN
+	SELECT nomMarque 
+    FROM marques
+END;
 
 /* *********************************************** */
 
@@ -49,3 +54,4 @@ CREATE SERVICE "ajoutConsole" TYPE 'Raw' AUTHORIZATION OFF USER "DBA" URL ON MET
 CREATE SERVICE "idMarque" TYPE 'Raw' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getIdMarque(:pMarque);
 CREATE SERVICE "verifMarque" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call verifMarque(:pMarque);
 CREATE SERVICE "verifExiste" TYPE 'Raw' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call verifExiste(:pModele);
+CREATE SERVICE "tableauMarque" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call tableauMarque();
