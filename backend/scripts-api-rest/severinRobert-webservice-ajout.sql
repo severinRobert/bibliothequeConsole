@@ -50,7 +50,7 @@ END;
 /* *********************************************** */
 
 CREATE SERVICE "ajoutMarque" TYPE 'Raw' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call ajoutMarque(:pMarque);
-CREATE SERVICE "ajoutConsole" TYPE 'Raw' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call ajoutConsole(:pMarque,:pAnnee,:pPortabilite,:pModele);
+CREATE SERVICE "ajoutConsole" TYPE 'Raw' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call ajoutConsole(:pIdMarque,:pAnnee,:pIdPortabilite,:pModele);
 CREATE SERVICE "idMarque" TYPE 'Raw' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getIdMarque(:pMarque);
 CREATE SERVICE "verifMarque" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call verifMarque(:pMarque);
 CREATE SERVICE "verifExiste" TYPE 'Raw' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call verifExiste(:pModele);
