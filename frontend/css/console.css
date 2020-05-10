@@ -58,15 +58,7 @@ table
 		padding: 12px;
 		margin: 50px;
 		border-radius: 9px;
-		animation-duration: 0.5s;
-		animation-iteration-count: infinite;
 	}
-
-@keyframes shadow {
-	0% { border-color: black; }
-	50% { border-color: red; }
-	100% { border-color: black; }
-}
 
 .bouton {
 	border-radius: 5px;
@@ -78,4 +70,13 @@ table
 
 .bouton:hover {
 	background-color: #fb9902;
+}
+
+.text {
+	border-radius: 3px;
+	border: 1px;
+}
+
+.text:hover {
+	background-color: #F5F5F5;
 }
