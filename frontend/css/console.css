@@ -1,3 +1,7 @@
+header {
+	text-align: center;
+}
+
 fieldset
 	{
 		background-color: #25FDE9 ; 
@@ -23,7 +27,6 @@ th
 
 form
 	{
-
 		width: auto;
 		border: 1px solid black;
 		text-align: justify;
@@ -79,4 +82,16 @@ table
 
 .text:hover {
 	background-color: #F5F5F5;
+}
+
+#commentPlace {
+	width: 1250px;
+	height: 110px;
+	border: 1px solid black;
+	text-align: justify;
+	padding: 12px;
+	margin: 50px;
+	border-radius: 9px;
+	overflow: auto;
+	overflow-wrap: 
 }
