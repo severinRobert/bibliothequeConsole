@@ -1,10 +1,4 @@
-"usestrict";
 
-document.addEventListener('DOMContentLoaded',initPage);
-
-function initPage (){
-	id('formulaireConsole').addEventListener('submit',traitementFormulaire);
-}
 
 function traitementFormulaire (event){
 	event.preventDefault();
