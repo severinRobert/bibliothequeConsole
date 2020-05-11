@@ -22,8 +22,7 @@
 		<fieldset>
 			<legend><h2>Recherche de console</h2></legend>
 			<p>
-				Veuiller indiquez si la console est portable ou non, choisisez votre marque dans la liste déroulante. </br>
-				Si nous avons oubliez une marque de console indiquez le nous et l'années.
+				Veuillez indiquer si la console est portable ou non, choisir votre marque dans la liste déroulante et l'année si vous la connsaissez.
 			</p>
 
 
@@ -45,8 +44,9 @@
 						<br /><br />
 						<input type="submit" class="bouton" value="Rechercher"/>
 						<input type="button" class="bouton" onclick='window.location.reload(false)' value="Rafraichir"/>
+						<div id="erreurDate"></div>
+
 				</form>
-				<div id="erreurDate"></div>
 
 				<table> <!-- Affichage des resutltats -->
 					<caption><h3>Résultats</h3></caption>
@@ -89,8 +89,8 @@
 						<input type="number" name="annee" class="text" step="1" min="1950" max="2100" required>
 						<br /><br />
 						<input type="submit" class="bouton" value="Ajouter">
-					<div id="infoAjout"><h3>Informations :</h3><br /></div>
 				</form>
+				<div id="infoAjout"><h3>Informations :</h3><br /></div>
 			</div>
 		</fieldset>
 	</body>
