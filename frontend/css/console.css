@@ -1,26 +1,27 @@
-header {
-	text-align: center;
-}
-
-fieldset
+header /* mais le titre au milieu de la page */
 	{
-		background-color: #25FDE9 ; 
+		text-align: center;
+	}
+
+fieldset /*change la couleur des tableau */
+	{
+		background-color: #5D9B9B; 
 		box-shadow: 6px 6px 6px black;
 	}
 
-h2
+h2 /* Change le titre h2 en italic */
 	{
 		font-style: italic;
 	}
 
-th
+th /*change en italic et souligne en rouge la partie du tableau dans la recherche de console*/
 	{
 		font-style: italic;
 		text-decoration: underline red;
 
 	}
 
-#resulte
+#resulte /*affiche les messages en rouge */
 	{
 		text-decoration:  red;
 	}
@@ -58,7 +59,7 @@ table
 		flex-wrap: nowrap;
 	}
 
-#infoAjout
+#infoAjout /* ajoute un tableau dans la partie ajout d'une console */
 	{
 		width: auto;
 		border: 1px solid black;
@@ -68,35 +69,47 @@ table
 		border-radius: 9px;
 	}
 
-.bouton {
-	border-radius: 5px;
-	border: 1px lime solid;
-	background-color: #7CFC00;
-	margin-bottom: 5px;
-	padding: 3px 8px;
-}
+.bouton /*change le couleur et le disigne des bouton en lui même */
+	{
+		border-radius: 5px;
+		border: 1px black solid;
+		background-color:#5D9B9B ;
+		margin-bottom: 5px;
+		padding: 3px 8px;
+	}
 
-.bouton:hover {
-	background-color: #fb9902;
-}
+.bouton:hover /*change la couleur des bouton au survole */
+	{
+		background-color: #fb9902;
+	}
 
-.text {
-	border-radius: 3px;
-	border: 1px;
-}
+.text /*change le disigne des zone à completer */
+	{
+		border-radius: 3px;
+		border: 1px;
+	}
 
-.text:hover {
-	background-color: #F5F5F5;
-}
+.text:hover /* change le couleur des zone à completer */
+	{
+		background-color: #F5F5F5;
+	}
 
-#commentPlace {
-	width: 1250px;
-	height: 110px;
-	border: 1px solid black;
-	text-align: justify;
-	padding: 12px;
-	margin: 50px;
-	border-radius: 9px;
-	overflow: auto;
-	overflow-wrap: 
-}
+#commentPlace /* fais un texte déroulant pour les commentaire afficher */
+	{
+		width: 1250px;
+		height: 100px;
+		border: 1px solid black;
+		text-align: justify;
+		padding: 12px;
+		margin: 50px;
+		border-radius: 9px;
+		overflow: auto;
+		padding-top: 0px;
+		
+	}
+#submitComment
+	{
+		width: 500px;
+		height: 40px;
+		
+	}
