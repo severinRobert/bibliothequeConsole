@@ -11,7 +11,7 @@ Backend : - base de données : 1 table pour les marques, 1 table pour la portabi
           - procédures/webservices : rechercher dans la DB, ajouter dans la DB, lire et écrire les commentaires dans la DB et supprimer        dans la DB.
 Frontend :  - html : une structure permettant l'ajout dynamique d'une table, d'options, commentaire et différentes inforations envoyées à       l'utilisateur.
             - css : un design qui permet une compréhension facile du site et un aspect visuel agréable.
-            - js : 
+            - js : lien avec la base de données et 
 
 
 # Détail api rest 
