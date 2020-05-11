@@ -44,7 +44,7 @@ function traitementFormulaire (event){
                         let tableau = tableHtml(rTableConsole);
 
                         id("result").innerHTML = tableau;
-                        id("erreurDate").innerText = 'Champs date ignorer!';
+                        id("erreurDate").innerText = 'Champs date ignoré!';
                     }
                     else {
                         id("erreurDate").innerText = `La marque ${pMarque} n'as pas de consoles ${pPortabilite}` ;
