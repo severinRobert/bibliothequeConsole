@@ -16,6 +16,7 @@ function traitementFormulaire (event){
             let table = tableHtml(rTableConsole);
 
             id("result").innerHTML = table;
+            id("erreurDate").innerHTML = "Champs date ignoré";
         }
         xhr2.send();
     }
