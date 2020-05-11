@@ -1,7 +1,7 @@
 # Projet-final-1TM1-bibliothèque-de-consoles
 
 # Présentation de l'équipe 
-Emilien PERREMANS, Baptiste FUNCK, Arthur BEHETS, Séverin ROBERT
+Emilien PERREMANS, Baptiste FUNCK, Arthur BEHETS, Séverin ROBERT HE201811
 
 # Description du projet 
 Notre projet consistera en une bibliothèque de consoles de jeux dans laquelle on pourra consulter la liste des consoles en fonction de l'année, de la marque et/ou de la portabilité. L'utilisateur aura l'opportunité de rajouter des consoles de jeux.
