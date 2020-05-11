@@ -12,7 +12,7 @@ CREATE procedure "dba"."getConsoleComment"()
 
 BEGIN 
 
-select idComment, commentaire from DBA.consoleComment
+select commentaire from DBA.consoleComment
 
 END;
 
