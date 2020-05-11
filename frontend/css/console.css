@@ -17,13 +17,13 @@ h2 /* Change le titre h2 en italic */
 th /*change en italic et souligne en rouge la partie du tableau dans la recherche de console*/
 	{
 		font-style: italic;
-		text-decoration: underline red;
-
+		/*text-decoration: underline red;*/
+		font-size: 1.2em;
 	}
 
 #resulte /*affiche les messages en rouge */
 	{
-		text-decoration:  red;
+		text-decoration:  black;
 	}
 
 form
@@ -48,7 +48,7 @@ table
 		border-radius: 9px;
 	} 
 
-#erreurDate 
+#erreurDate /*change la couleur du message d'erreur*/
 	{
 		color: red;
 	}
