@@ -36,11 +36,11 @@
 	
 
 					<h3>Quelle est la marque ?</h3> <!-- demande la marque -->
-						<select name="marque" id="marque">
+						<select name="marque" id="marque" title="Indiquez la marque">
 						</select>
 
 					<h3>Années</h3> <!-- demande l'année -->
-						<input type="number" class="text" name="annee" step="1" min="1950" max="2100" > 
+						<input type="number" class="text" name="annee" step="1" min="1950" max="2100" title="Indiquez l'année" > 
 						<br /><br />
 						<input type="submit" class="bouton" value="Rechercher"/>
 						<input type="button" class="bouton" onclick='window.location.reload(false)' value="Rafraichir"/>
@@ -70,7 +70,7 @@
 
 		<fieldset>
 			<legend><h2>Ajout d'une console</h2></legend>
-			<p>Indiquez les caractéristiques de la console</p>
+			<p>Indiquez les caractéristiques de la console.</p>
 			<div id="conteneurAjout">
 				<form id="ajoutConsole">
 					<h3>Type de console ?</h3>
@@ -79,14 +79,14 @@
 
 					<h3>Marque ?</h3>
 						<!-- indique la marque -->
-						<input type="text" name="marque" maxlength="25" class="text" required></input>
+						<input type="text" name="marque" maxlength="25" class="text" title="Indiquez la marque" required></input>
 
 					<h3>Modèle ?</h3>
 						<!-- indique le modele -->
-						<input type="text" name="modele" maxlength="25" class="text" required></input>
+						<input type="text" name="modele" maxlength="25" class="text" title="Indiquez le modèle" required></input>
 
 					<h3>Année de sortie ?</h3>
-						<input type="number" name="annee" class="text" step="1" min="1950" max="2100" required>
+						<input type="number" name="annee" class="text" step="1" min="1950" max="2100" title="Indiquez l'année" required>
 						<br /><br />
 						<input type="submit" class="bouton" value="Ajouter">
 				</form>
@@ -97,13 +97,13 @@
 	<footer id ="footer">
     		<fieldset>
     			<legend><h2>Ajouter un commentaire</h2></legend>
+        		<form id="submitComment">
+            		<label for="newComment">Ecrire un commentaire</label>
+            		<input type ="text" id="newComment" class="text" name ="newComment" title="Ecrivez un commentaire" required maxlength="999">
+           			<label for="sendComment"></label>
+            		<input name ="sendComment" id="sendComment" type="submit" value="Envoyer">
+        		</form>
         		<div id="commentPlace"></div>
-        			<form id="submitComment">
-            				<label for="newComment">Ecrire un commentaire</label>
-            				<input type ="text" id="newComment" class="text" name ="newComment" required maxlength="999">
-           				<label for="sendComment"></label>
-            				<input name ="sendComment" id="sendComment" type="submit" value="Envoyer">
-        			</form>
     		</fieldset>
 	</footer>
 </html>
