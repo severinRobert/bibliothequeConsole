@@ -17,7 +17,7 @@ function showComment(){
 function affichageComments(comment){
     let affichageComments ="";
     for (let i in comment){
-        affichageComments += "<p>" + comment[i]['commentaire'] + "</p>";
+        affichageComments = "<p>" + comment[i].commentaire + "</p>" + affichageComments;
     }
     return affichageComments;
 }
