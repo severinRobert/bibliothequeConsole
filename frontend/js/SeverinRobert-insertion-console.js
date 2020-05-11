@@ -1,5 +1,5 @@
 "use strict";
-
+// auteur : Séverin Robert HE201811
 /**
  * Appelle le service Web qui permet d'ajouter une console
  * @param {event} evenement qui a appelé la fonction
