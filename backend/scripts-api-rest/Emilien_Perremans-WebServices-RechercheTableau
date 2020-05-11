@@ -12,7 +12,7 @@ CREATE PROCEDURE "DBA"."getTableauConsoleDate"( IN pMarque VARCHAR (100),IN pPor
 BEGIN
 	SELECT modele, nomMarque, typePortabilite, annee, idConsole
     	FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
-    	WHERE nomMarque = pMarque AND portabilite.typePortabilite = pPortabilite
+    	WHERE nomMarque = pMarque AND typePortabilite = pPortabilite
 END;
 
 
