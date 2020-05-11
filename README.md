@@ -12,7 +12,7 @@ Backend : - base de données : 1 table pour les marques, 1 table pour la portabi
 Frontend :  - html : une structure permettant l'ajout dynamique d'une table, d'options, commentaire et différentes inforations envoyées à       l'utilisateur.
             - css : un design qui permet une compréhension facile du site et un aspect visuel agréable.
             - js : 
-La liste des aspects techniques qu'il faut implémenter pour mettre en place le projet, en séparant les aspects backend (base de données, procédures SQL, webservices, serveur de fichiers) et les aspects frontend (html, css, js, page web et fonctionnalités à proposer aux utilisateurs).
+
 
 # Détail api rest 
 Pour chaque webservice, vous devez indiquer le endpoint, les paramètre et le format de réponse. Indiquez aussi qui en est l'auteur. (Cela peut être "commun", mais il faut au moins 1 webservice complet personnel par membre du groupe.)
