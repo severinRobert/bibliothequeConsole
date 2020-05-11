@@ -16,3 +16,4 @@ Frontend :  - html : une structure permettant l'ajout dynamique d'une table, d'o
 
 # Détail api rest 
 Pour chaque webservice, vous devez indiquer le endpoint, les paramètre et le format de réponse. Indiquez aussi qui en est l'auteur. (Cela peut être "commun", mais il faut au moins 1 webservice complet personnel par membre du groupe.)
+![graphiqueER] (graphiqueER.PNG)
