@@ -14,9 +14,11 @@ function traitementFormulaire (event){
         xhr2.onload = () => { console.log(xhr2.responseText);
             let rTableConsole = JSON.parse(xhr2.responseText);
             let table = tableHtml(rTableConsole);
-
             id("result").innerHTML = table;
-            id("erreurDate").innerHTML = "Champs date ignoré";
+
+            if (pAnnee.length == 0) {
+                id("erreurDate").innerHTML = "Champs date ignoré";
+            }
         }
         xhr2.send();
     }
