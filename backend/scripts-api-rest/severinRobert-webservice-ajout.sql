@@ -1,3 +1,5 @@
+/* auteur : Séverin Robert HE201811 */
+
 CREATE PROCEDURE "DBA"."ajoutConsole"( IN pIdMarque INTEGER, IN pAnnee INTEGER, IN pIdPortabilite INTEGER, IN pModele VARCHAR (100) )
 BEGIN
 	INSERT INTO consoles                                    /* ajout de la console à la DB */
