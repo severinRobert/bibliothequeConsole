@@ -1,7 +1,7 @@
 CREATE PROCEDURE "DBA"."getTableauConsole"( IN pMarque VARCHAR (100), IN pAnnee INTEGER, IN pPortabilite VARCHAR (40))/* */
 
 BEGIN
-	SELECT modele,nomMarque,typePortabilite,annee,idConsole
+	SELECT modele, nomMarque, typePortabilite, annee, idConsole
     	FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
     	WHERE nomMarque = pMarque AND annee = pAnnee AND portabilite.typePortabilite = pPortabilite
 END;
@@ -10,7 +10,7 @@ END;
 CREATE PROCEDURE "DBA"."getTableauConsoleDate"( IN pMarque VARCHAR (100),IN pPortabilite VARCHAR (40))/* */
 
 BEGIN
-	SELECT modele,nomMarque,typePortabilite,annee,idConsole
+	SELECT modele, nomMarque, typePortabilite, annee, idConsole
     	FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
     	WHERE nomMarque = pMarque AND portabilite.typePortabilite = pPortabilite
 END;
@@ -19,7 +19,7 @@ END;
 CREATE PROCEDURE "DBA"."getTableauConsoleMarque"( IN pMarque VARCHAR (100))
 
 BEGIN
-	SELECT modele,nomMarque,typePortabilite,annee,idConsole
+	SELECT modele, nomMarque, typePortabilite, annee, idConsole
     	FROM consoles NATURAL JOIN marques NATURAL JOIN portabilite 
     	WHERE nomMarque = pMarque
 END;
