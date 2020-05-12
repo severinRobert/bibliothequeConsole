@@ -48,46 +48,40 @@ param = mm chose, que prend la procédure
       - Format de réponse : renvoi en JSON un tableau contenant (ou non) le nom d'utilisateur et le mot de passe entré par la personne qui correspond (ou non) à  "idCom VARCHAR(16) NOT NULL" et "mdp VARCHAR(20) NOT NULL" d'une même ligne dans la table dba.communaute.
       - Endpoint  : permet une vérification du nom d'utilisateur et du mot de passe entré, en cas d'erreur, renvoi un tableau vide (tableau.length = 0 = false) en cas de concordance, renvoi un tableau de longueur 1 (tableau.length = 1 = true) et l'utilisateur est connecté.
  
-- Séverin Robert :
-    - serv_Desc : appelle la procédure proc_Desc
-      - Paramètres : Prend en paramètre, la nouvelle description introduite dans la page HTML privé & l'id de la personne connecté 
-      - Format de réponse : Pas de réponse -> Modifie la table 
-      - Endpoint  : Va modifier la description de la personne connecté, dans la table communauté.
+- Séverin Robert :    
+    - verifExiste : appelle la procédure verifExiste(:pModele)
+      - Paramètres : Le modèle écrit par l'utilisateur 
+      - Format de réponse : Renvoie une chaine vide si le modèle n'existe pas encore et dans le cas contraire renvoie le nom du modèle
+      - Endpoint  : Permet de vérifier si le modèle existe déjà pour éviter de faire des doublons.
                 
-    - serv_Mail : appelle la procédure proc_Mail
-      - Paramètres : Prend en paramètre la nourvelle adresse mail introduite dans la page HTML privé & l'id de la personne connecté 
+    - verifMarque : appelle la procédure verifMarque(:pMarque)
+      - Paramètres : La marque encodée par l'utilisateur
+      - Format de réponse : Renvoie une chaine vide si la marque n'existe pas encore et dans le cas contraire renvoie le nom de la marque
+      - Endpoint  : Permet de vérifier si la marque existe déjà si ce n'est pas le cas le js appelle le service ajoutMarque.
+      
+    - ajoutMarque : appelle la procédure ajoutMarque(:pMarque)
+      - Paramètres : La marque encodée par l'utilisateur
       - Format de réponse : Pas de réponse -> Modifie la table 
-      - Endpoint  : Va modifier l'adresse mail de la personne connecté, dans la table communauté. 
-                
-    - serv_Notes :
-      - Paramètres : Prend en paramètre, la nouvelle note introduite dans la page HTML publique & l'id de la personne connecté 
+      - Endpoint  : Ajoute la marque encodée par l'utilisateur appelle tableauMarque pour l'ajouter en option dans les recherches. 
+                    
+    - tableauMarque : appelle la procédure tableauMarque()
+      - Paramètres : / 
+      - Format de réponse : Renvoie un tableau JSON avec les marques
+      - Endpoint  : Permet de rajouter l'option de la nouvelle marque dynamiquement dans le html pour la recherche dans la base de données.
+              
+    - idMarque : appelle la procédure getIdMarque(:pMarque)
+      - Paramètres : La marque encodée par l'utilisateur
+      - Format de réponse : Renvoie l'id de la marque encodée par l'utilisateur
+      - Endpoint  : Permet par la suite de rajouter la console dans la base de données.
+           
+    - ajoutConsole : appelle la procédure ajoutConsole(:pIdMarque,:pAnnee,:pIdPortabilite,:pModele)
+      - Paramètres : L'année et le modèle encodé par l'utilisateur et l'id de la marque et de la portabilité qui ont été calculé par avant en SQL et JS.
       - Format de réponse : Pas de réponse -> Modifie la table 
-      - Endpoint  : Va modifier la note de la personne connecté, dans la table communauté.
+      - Endpoint  : Permet de rajouter la console dans la base de données.
                 
-    - serv_Telephone : appelle la procédure proc_Telephone 
-      - Paramètres : Prend en paramètre, la nouvelle description introduite dans la page HTML privé & l'id de la personne connecté 
-      - Format de réponse : Pas de réponse -> Modifie la table 
-      - Endpoint  : Va modifier le telephone de la personne connecté, dans la table communauté.
-                
-    - serv_Ville : appelle la procédure proc_ville 
-      - Paramètres : Prend en paramètre, la nouvelle description introduite dans la page HTML & l'id de la personne connecté 
-      - Format de réponse : Pas de réponse -> Modifie la table 
-      - Endpoint  : Va modifier la ville de la personne connecté, dans la table communaué 
-               
-    - serv_com : appelle la procédure proc_com
-      - Paramètres : Prend en paramètre, le nouveau commentaire , l'id de la personne chez qui est écrit le commentaire & l'id de la personne connecté 
-      - Format de réponse : Pas de réponse -> Modifie la table 
-      - Endpoint  : Va ajouter le commentaire introduit dans la page HTML publique dans la table commentaire avec l'id de l'auteur du commentaire ainsi que l'id du destinataire de ce commentaire.
-                
-    - serv_valeurs : appelle la procédure proc_valeurs 
-      - Paramètres : prend en paramètre l'identifiant (idCom) de la personne sur laquelle on a cliqué dans la page Communauté
-      - Format de réponse :Cette procédure renvoie en JSON uniquement (sur base de l'id de  la personne)  les informations nécéssaires dans la page publique pour faire un portrait visible par les autres utilisateurs. Pour cela nous avons besoin du nom [VARCHAR(30)], du prénom [VARCHAR(30)], du sex [CHAR(1)], du numéro de télephone [VARCHAR(15)], le mail [VARCHAR(40)], la date de naissance [DATE], la photo [VARCHAR(50)], le portrait [VARCHAR(120)], la ville via un join sur postal dans la table villes [INTEGER], la cote [INTEGER], les commentaires via un join sur idCom dans la table commentaires [ VARCHAR(120)] et pour finir les taches qu'il propose via un join sur idCom dans la table taches [ VARCHAR(100)]
-      - Endpoint  : Lorsque la personne connecté click sur un des profils de la page communauté, les procédures renvoie les infos dans la page profil publique afin de se faire une idée sur la personne ainsi que de la contacter. 
-                
-    - serv_valeursBis : appelle la procédure proc_valeursBis 
-      - Paramètres : prend en paramètre l'identifiant de la personne connecté 
-      - Format de réponse : renvoie en JSON les uniquement les informations nécéssaires (sur base de l'id de la personne connecté) dans la page privé pour en faire un portrait personnel et modifiable . Pour cela nous avons besoin du nom [VARCHAR(30)], du prénom [VARCHAR(30)], du sex [CHAR(1)], du numéro de télephone [VARCHAR(15)], le mail [VARCHAR(40)], la date de naissance [DATE], la photo [VARCHAR(50)], le portrait [VARCHAR(120)], la ville via un join sur postal dans la table villes [INTEGER],  et pour finir les taches qu'il propose via un join sur idCom dans la table taches [ VARCHAR(100)]
-      - Endpoint  : Cette procédure envoie dans la page du profil privé de la personne connecté les informations générales qu'il peut en partie modifier comme sa ville son mail, son portrait ext.. 
+       
+
+           
                 
 - Clémentine Sacré :
     - serv_donnees (appelle procédure "donnee"):
