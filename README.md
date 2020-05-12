@@ -1,35 +1,28 @@
-# 1T-projet-final
+# bibliothèque de console 1TM1
 
 # Présentation de l'équipe
-Aurélien Brille, Cécile Bonnet, Clémentine Sacré, Noelle Khazoum
+Séverin Robert (HE201811), Émilien Perremans (HE201859), Arthur Behets (), Baptiste Funck ()
 
 # Description du projet
   - BESOIN DU CLIENT
   
-Le site simple task offre la possibilité aux utilisateurs de déposer des annonces et/ou d'en trouver et de se mettre en contact sans intermédiaires avec la personne désiré.
+Le site permet au client d'interagir avec une base de données de consoles de jeux
 
 
 
   - FONCTIONNALITÉS PRINCIPALES
   
-    - Une page regroupant l'ensemble des tâches déjà proposées sur le site ainsi que d'une zone pour ajouter ses propres propositions de tâches. La recherche peut être affiné selon une catégorie de tâche, un lieu géographique ou le profil de la personne    
-    - Un système de connexion/ inscription qui vise à protéger ainsi qu'à limité l'accès aux informations personnelles introduite dans le site. 
-    
-
-  - FONCTIONNALITÉS SECONDAIRES
-    
-    - Une page d'accueil permettant de s'inscrire ou de se connecter sur le site.
-    - Un profil public (accessible par tous) reprennant les données personnelles de chaque utilisateur. La personne visitant le profil peut laisser un commentaire ainsi qu'une note sur la prestation de la personne. 
-    - Un profil privé accessible uniquement au "propriétaire" du compte, lui permettant de voir et de modifier ses informations personnelles.
-    - Une page listant tous les profils inscrits sur le site, et permettant d'accéder directement à leur profil public via un boutton.
+    - recherche de console.    
+    - ajout de console.
+    - commenter le site.
     
 
 # Aspects implémentés
 La liste des aspects techniques qu'il faut implémenter pour mettre en place le projet, en séparant les aspects backend (base de données, procédures SQL, webservices, serveur de fichiers) et les aspects frontend (html, css, js, page web et fonctionnalités à proposer aux utilisateurs). ???
 
-  - Base de données : Tables reprenant les informations sur les personnes, les tâches que certaines personnes proposent, et les avis laissés par d'autres personnes aux utilisateurs ;
+  - Base de données : Tables pour les consoles, marques, portabilité et commentaires.
   - Procédures SQL : Liste d'instructions appellées via un web service dans un JS afin d'ammener des informations dans la page ou de modifier la table.
-  - Webservices : La plupart des webservices en JSON afin de modifier/ajouter/chercher des données ;
+  - Webservices : 
   - Serveur de fichiers : 
   <!-- serveur central au sein d’un réseau d’ordinateurs qui met des systèmes de fichiers ou, tout du moins, des parties d’un système de fichiers à disposition des clients associés. Les serveurs de fichiers offrent ainsi aux utilisateurs un lieu de stockage centralisé pour les fichiers présents sur leurs propres supports de données, ce lieu étant accessible à tous les clients autorisés-->
   
@@ -55,7 +48,7 @@ param = mm chose, que prend la procédure
       - Format de réponse : renvoi en JSON un tableau contenant (ou non) le nom d'utilisateur et le mot de passe entré par la personne qui correspond (ou non) à  "idCom VARCHAR(16) NOT NULL" et "mdp VARCHAR(20) NOT NULL" d'une même ligne dans la table dba.communaute.
       - Endpoint  : permet une vérification du nom d'utilisateur et du mot de passe entré, en cas d'erreur, renvoi un tableau vide (tableau.length = 0 = false) en cas de concordance, renvoi un tableau de longueur 1 (tableau.length = 1 = true) et l'utilisateur est connecté.
  
-- Cécile Bonnet :
+- Séverin Robert :
     - serv_Desc : appelle la procédure proc_Desc
       - Paramètres : Prend en paramètre, la nouvelle description introduite dans la page HTML privé & l'id de la personne connecté 
       - Format de réponse : Pas de réponse -> Modifie la table 
