@@ -18,7 +18,6 @@ Le site permet au client d'interagir avec une base de données de consoles de je
     
 
 # Aspects implémentés
-La liste des aspects techniques qu'il faut implémenter pour mettre en place le projet, en séparant les aspects backend (base de données, procédures SQL, webservices, serveur de fichiers) et les aspects frontend (html, css, js, page web et fonctionnalités à proposer aux utilisateurs). ???
 
   - Base de données : Tables pour les consoles, marques, portabilité et commentaires.
   - Procédures SQL : Liste d'instructions appellées via un web service dans un JS afin d'ammener des informations dans la page ou de modifier la table.
@@ -74,11 +73,7 @@ La liste des aspects techniques qu'il faut implémenter pour mettre en place le 
     - ajoutConsole : appelle la procédure ajoutConsole(:pIdMarque,:pAnnee,:pIdPortabilite,:pModele)
       - Paramètres : L'année et le modèle encodé par l'utilisateur et l'id de la marque et de la portabilité qui ont été calculé par avant en SQL et JS.
       - Format de réponse : Pas de réponse -> Modifie la table 
-      - Endpoint  : Permet de rajouter la console dans la base de données.
-                
-       
-
-           
+      - Endpoint  : Permet de rajouter la console dans la base de données.           
                 
 - Clémentine Sacré :
     - serv_donnees (appelle procédure "donnee"):
