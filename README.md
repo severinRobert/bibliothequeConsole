@@ -88,7 +88,7 @@ La liste des aspects techniques qu'il faut implémenter pour mettre en place le 
                
   
 # Détail DB
-![](photo/image.png)
+![graphiqueER](graphiqueER.png)
 - Table des marques (contient les marques et leurs id) :
     - idMarque représente la PK de la table ;
     - nomMarque représente le nom de la marque ;
