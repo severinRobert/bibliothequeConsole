@@ -1,4 +1,4 @@
-/* Script réalisé par Arthur Behets HE201707 /
+/* Script réalisé par Arthur Behets HE201707 */
 create procedure "dba"."addComment"(IN newComment varchar(999))
 BEGIN
 INSERT INTO consoleComment
