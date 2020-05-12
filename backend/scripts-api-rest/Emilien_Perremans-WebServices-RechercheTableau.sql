@@ -11,9 +11,11 @@ BEGIN
 END;
 
 /*Service Web*/
+
 CREATE SERVICE "tableConsoleHtml" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getTableauConsole(:pMarque,:pAnnee,:pPortabilite);
 
 /**********************************************************************************************************************************/
+
 /*Procédure*/
 
 CREATE PROCEDURE "DBA"."getTableauConsoleDate"( IN pMarque VARCHAR (100),IN pPortabilite VARCHAR (40))/* */
@@ -25,9 +27,11 @@ BEGIN
 END;
 
 /*Service Web*/
+
 CREATE SERVICE "tableConsoleHtmlDate" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getTableauConsoleDate(:pMarque,:pPortabilite);
 
 /**********************************************************************************************************************************/
+
 /*Procédure*/
 
 CREATE PROCEDURE "DBA"."getTableauConsoleMarque"( IN pMarque VARCHAR (100))
@@ -39,4 +43,6 @@ BEGIN
 END;
 
 /*Service Web*/
+
 CREATE SERVICE "tableConsoleHtmlMarque" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getTableauConsoleMarque(:pMarque);
+
