@@ -1,4 +1,7 @@
 /* Script réalisé par Arthur Behets HE201707 */
+
+/*Procédure*/
+
 create procedure "dba"."addComment"(IN newComment varchar(999))
 BEGIN
 INSERT INTO consoleComment
@@ -7,34 +10,19 @@ VALUES
 (newComment)
 END;
 
+/*Service Web*/
 
-CREATE procedure "dba"."getConsoleComment"()
-
-BEGIN 
-
-select commentaire from DBA.consoleComment
-
-END;
-
-
+CREATE SERVICE "tableauMarque" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call tableauMarque();
 
 /***************************************************************************************************************************************/
 
-create service "addCommentService"
-TYPE 'JSON'
-AUTHORIZATION OFF 
-USER "DBA" 
-URL ON 
-METHODS 'get' 
-as call addComment(:newComment);
+/*Procédure*/
 
+CREATE procedure "dba"."getConsoleComment"()
+BEGIN 
+select commentaire from DBA.consoleComment
+END;
 
-create service "tableConsoleComment" 
-type 'JSON'
-AUTHORIZATION OFF
-USER "DBA"
-URL ON 
-METHODS 'GET' 
-AS call getConsoleComment();
+/*Service Web*/
 
-
+create service "tableConsoleComment" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call getConsoleComment();
