@@ -33,17 +33,22 @@ Le site permet au client d'interagir avec une base de données de consoles de je
 
 # Détail api rest
 
-- Aurélien Brille :
-    - receiveData : appelle la procédure "inscription"
-      - Paramètres : ce service prend 9 paramètres en compte lors de l'inscription via le syte HTML. Le nom, prénom, nom d'utilisateur, mail, téléphone, ville, naissance, mot de passe, mot de passe de confirmation et couleur de l'avatar.
-      - Format de réponse : Ne renvoi rien.
-      - Endpoint  : ajoute dans la table dba.communaute, un nouvelle ligne contenant toutes les informations de la nouvelle personne inscrite sur base des données fournies.
+- Emilien Perremans :
+    - tableConsoleHtml : appel la procédure "getTableauConsole"
+      - 
+      - 
+      - 
       
-    - serv_connexions : appelle la procédure "proc_connexion"
-      - Paramètres : les deux paramètre de ce service sont reçu lors de la connexion, le service reçoit le nom d'utilisateur et le mot de passe de l'utilisateur.
-      - Format de réponse : renvoi en JSON un tableau contenant (ou non) le nom d'utilisateur et le mot de passe entré par la personne qui correspond (ou non) à  "idCom VARCHAR(16) NOT NULL" et "mdp VARCHAR(20) NOT NULL" d'une même ligne dans la table dba.communaute.
-      - Endpoint  : permet une vérification du nom d'utilisateur et du mot de passe entré, en cas d'erreur, renvoi un tableau vide (tableau.length = 0 = false) en cas de concordance, renvoi un tableau de longueur 1 (tableau.length = 1 = true) et l'utilisateur est connecté.
- 
+    - tableConsoleHtmlDate : appelle la procédure "getTableauConsoleDate"
+      - 
+      - 
+      - 
+     
+    -tableConsoleHtmlMarque : appelle la procédure "getTableauConsoleMarque"
+      - 
+      - 
+      - 
+      
 - Séverin Robert :    
     - verifExiste : appelle la procédure verifExiste(:pModele)
       - Paramètres : Le modèle écrit par l'utilisateur 
