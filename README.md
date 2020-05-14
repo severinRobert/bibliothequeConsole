@@ -80,11 +80,8 @@ Le site permet au client d'interagir avec une base de données de consoles de je
       - Format de réponse : Pas de réponse -> Modifie la table 
       - Endpoint  : Permet de rajouter la console dans la base de données.           
                 
-- Clémentine Sacré :
-    - serv_donnees (appelle procédure "donnee"):
-      - Paramètres : /
-      - Format de réponse : renvoie en JSON le nom (varchar de 30) de toutes les personnes, ainsi que leur prénom (varchar de 30), leur photo (varchar de 50), leur portrait (varchar de 120) et leur cote (entier entre 0 et 10) afin de pouvoir afficher un pré-profil de chaque personne inscrite. Leur id (varchar de 16) est également renvoyé afin de pouvoir accéder à une autre page plus développée sur chacun d'eux ;
-      - Endpoint  : Retrouve les données utiles pour la page communauté et les renvoie ;
+- Arthure :
+   
                
   
 # Détail DB
