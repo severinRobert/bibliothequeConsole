@@ -19,30 +19,26 @@ Le site permet au client d'interagir avec une base de données de consoles de je
 
 # Aspects implémentés
 
-  - Base de données : Tables pour les consoles, marques, portabilité et commentaires.
-  - Procédures SQL : Liste d'instructions appellées via un web service dans un JS afin d'ammener des informations dans la page ou de modifier la table.
-  - Webservices : 
-  - Serveur de fichiers : 
-  <!-- serveur central au sein d’un réseau d’ordinateurs qui met des systèmes de fichiers ou, tout du moins, des parties d’un système de fichiers à disposition des clients associés. Les serveurs de fichiers offrent ainsi aux utilisateurs un lieu de stockage centralisé pour les fichiers présents sur leurs propres supports de données, ce lieu étant accessible à tous les clients autorisés-->
-  
-  - HTML : page comprenant toutes les pages, affichant la page demandée et cachant le reste des pages en attendant ;
-  - CSS : site le plus esthétique possible, et le plus ergonomique ; 
-  - JS : fonctions appelées lors de l'affichage d'une page ou lors d'un appel de bouton ;
-  - Page web : 
-  - Fonctionnalités : permet s'inscrire/de se connecter. Egalement de déposer/chercher des tâches, affiner sa recherche de tâche selon differents critères; de mettre des avis/note aux différentes personnes de la communauté, actualiser ses informations; 
+  - Base de données : Tables pour les consoles, marques, portabilité et commentaires ;
+  - Procédure SQL : permet de chercher / modifier la base de données ;
+  - Webservice : appelle les procédures adéquates ;
+  - HTML : structure du site implémentant les différentes parties utiles (recherche,ajout,commentaire) ;
+  - CSS : site le plus esthétique possible et facile à l'utilisation ; 
+  - JS : fonctions appelées au chargement de la page et lors de soumission de formulaire ;
+  - Fonctionnalités : rechercher et ajouter dans la base de données, commenter le site et voir les commentaire des autres utilisateurs ; 
 
 # Détail api rest
 
 - Emilien Perremans :
     - tableConsoleHtml : appel la procédure "getTableauConsole"
-      - Paramètre : il demande à la base de donnée les réponse choisie par l'utulistaeur.
-      - format de réponse : Renvoi un tableau avec les données encoder dans la base.
+      - Paramètre : il demande à la base de donnée les réponses choisies par l'utilistaeur.
+      - Format de réponse : Renvoi un tableau avec les données encodées dans la base.
     - tableConsoleHtmlDate : appelle la procédure "getTableauConsoleDate"
-      - demande à lutulisateur la date à la qu'elle la console a été crée et renvoi une réponse.
-      - si le champs date est incorecte ou n'est pas choisie un message d'erreur s'affiche "champs date ignoré" et renvoi la table de la console en entier.
+      - Paramètre : demande à l'utilisateur la date à laquelle la console a été créée et renvoi une réponse.
+      - Format de réponse : si le champs date est incorrecte ou vide un message d'erreur s'affiche "champs date ignoré" et renvoi la table de la console en entier.
     -tableConsoleHtmlMarque : appelle la procédure "getTableauConsoleMarque"
-      - Demande la marque.
-      - si la marque n'est pas encore dans la base de donnée un message dit "la marque .. n'as pas de console ou aucune console de cette merque exciste. 
+      - Paramètre : demande la marque.
+      - Format de réponse : si la marque n'est pas encore dans la base de donnée un message dit "la marque .. n'as pas de console ou aucune console de cette marque existe. 
       
 - Séverin Robert :    
     - verifExiste : appelle la procédure verifExiste(:pModele)
