@@ -35,19 +35,14 @@ Le site permet au client d'interagir avec une base de données de consoles de je
 
 - Emilien Perremans :
     - tableConsoleHtml : appel la procédure "getTableauConsole"
-      - 
-      - 
-      - 
-      
+      - Paramètre : il demande à la base de donnée les réponse choisie par l'utulistaeur.
+      - format de réponse : Renvoi un tableau avec les données encoder dans la base.
     - tableConsoleHtmlDate : appelle la procédure "getTableauConsoleDate"
-      - 
-      - 
-      - 
-     
+      - demande à lutulisateur la date à la qu'elle la console a été crée et renvoi une réponse.
+      - si le champs date est incorecte ou n'est pas choisie un message d'erreur s'affiche "champs date ignoré" et renvoi la table de la console en entier.
     -tableConsoleHtmlMarque : appelle la procédure "getTableauConsoleMarque"
-      - 
-      - 
-      - 
+      - Demande la marque.
+      - si la marque n'est pas encore dans la base de donnée un message dit "la marque .. n'as pas de console ou aucune console de cette merque exciste. 
       
 - Séverin Robert :    
     - verifExiste : appelle la procédure verifExiste(:pModele)
