@@ -30,15 +30,15 @@ Le site permet au client d'interagir avec une base de données de consoles de je
 # Détail api rest
 
 - Emilien Perremans :
-    - tableConsoleHtml : appel la procédure "getTableauConsole"
+    - tableConsoleHtml : appelle la procédure "getTableauConsole"
       - Paramètre : il demande à la base de donnée les réponses choisies par l'utilistaeur.
       - Format de réponse : Renvoi un tableau avec les données encodées dans la base.
     - tableConsoleHtmlDate : appelle la procédure "getTableauConsoleDate"
       - Paramètre : demande à l'utilisateur la date à laquelle la console a été créée et renvoi une réponse.
       - Format de réponse : si le champs date est incorrecte ou vide un message d'erreur s'affiche "champs date ignoré" et renvoi la table de la console en entier.
-    -tableConsoleHtmlMarque : appelle la procédure "getTableauConsoleMarque"
+      -tableConsoleHtmlMarque : appelle la procédure "getTableauConsoleMarque"
       - Paramètre : demande la marque.
-      - Format de réponse : si la marque n'est pas encore dans la base de donnée un message dit "la marque .. n'as pas de console ou aucune console de cette marque existe. 
+      - Format de réponse : si la marque n'est pas encore dans la base de donnée, affiche un message "la marque .. n'as pas de console ou aucune console de cette marque existe". 
       
 - Séverin Robert :    
     - verifExiste : appelle la procédure verifExiste(:pModele)
