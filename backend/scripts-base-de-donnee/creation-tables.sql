@@ -12,6 +12,7 @@ CREATE TABLE marques (
 
 CREATE TABLE consoles (
       idConsole int NOT NULL DEFAULT AUTOINCREMENT ,
+      idSecurite int NOT NULL DEFAULT 1,
       idPortabilite INTEGER NOT NULL,
       idMarque int NOT NULL DEFAULT AUTOINCREMENT,
       modele VARCHAR(100) NULL,       
