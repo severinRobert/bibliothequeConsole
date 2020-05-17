@@ -1,3 +1,10 @@
+"use strict";
+//Auteur: Baptiste Funck HE201830 
+/**
+ *appelle les web service permermettant de vérifier la sécurisation d'une ligne et le web service permettant de supprimer une ligne choisie
+*/
+
+
 let rConsoleExiste = XMLHttpRequest();
 rConsoleExiste.open("get", "verifExiste?pModele=${pModele}" + "", true);
 rConsoleExiste.onload = () =>{
