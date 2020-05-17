@@ -58,10 +58,11 @@ table
 }
 
 #conteneurRecherche, #conteneurAjout, #conteneurRechercheDeux
-{
-    display: flex;
-    flex-wrap: nowrap;
-}
+   {
+		display: flex;
+        flex-wrap: wrap;
+	}
+
 
 #infoAjout /* ajoute un tableau dans la partie ajout d'une console */
 	{
