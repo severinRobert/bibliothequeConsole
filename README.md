@@ -1,7 +1,7 @@
 # bibliothèque de console 1TM1
 
-# Présentation de l'équipe
-Séverin Robert (HE201811), Émilien Perremans (HE201859), Arthur Behets (), Baptiste Funck ()
+# Présentation de l'équipe30
+Séverin Robert (HE201811), Émilien Perremans (HE201859), Arthur Behets (), Baptiste Funck (HE201830)
 
 # Description du projet
   - BESOIN DU CLIENT
@@ -88,10 +88,25 @@ Le site permet au client d'interagir avec une base de données de consoles de je
        - EndPoint : Afficher les commentaires sur le site.
   
     
-  
+ -Baptiste :
     
- 
-  
+    -rVerificationsecurite : appelle la procédure "VrificationSecuritee".
+    
+   -Paramètre : la console entrée par l'utilisateur
+   -format de réponse : pas de réponse --> simple vérification
+   -Endpoint: Vérifie si la console rentrer au clavier par l'utilisateur est une console ajoutée ou une console se trouvant déjà dans la               base de donnée
+   
+   
+   -rSuppressionConsole : appelle la procédure "suppressionConsole"
+   
+   -Paramètre : la console entrée par l'utilisateur
+   -Format de réponse : pas de réponse --> modification de la table
+   -Endpoint: Supprime la console choisi par l'utilisateur ainsi que la ligne qui lui est associée
+   
+   
+   
+   
+   
 # Détail DB
 ![graphiqueER](graphiqueER.png)
 - Table des marques (contient les marques et leurs id) :
