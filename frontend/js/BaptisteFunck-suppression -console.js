@@ -29,4 +29,5 @@ rConsoleExiste.onload = () =>{
         }
         rVerificationSecurite.send()
 }
-rConsoleExiste.send()
+rConsoleExiste.send();
+}
