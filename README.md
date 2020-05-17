@@ -1,7 +1,7 @@
 # bibliothèque de console 1TM1
 
 # Présentation de l'équipe30
-Séverin Robert (HE201811), Émilien Perremans (HE201859), Arthur Behets (), Baptiste Funck (HE201830)
+Séverin Robert (HE201811), Émilien Perremans (HE201859), Arthur Behets (HE201707), Baptiste Funck (HE201830)
 
 # Description du projet
   - BESOIN DU CLIENT
