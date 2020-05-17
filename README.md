@@ -15,6 +15,7 @@ Le site permet au client d'interagir avec une base de données de consoles de je
     - recherche de console.    
     - ajout de console.
     - commenter le site.
+    - suppression de console.
     
 
 # Aspects implémentés
