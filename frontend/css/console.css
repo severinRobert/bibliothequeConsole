@@ -9,8 +9,12 @@ fieldset /*change la couleur des tableau */
 		box-shadow: 6px 6px 6px black;
 	}
 
-h2 /* Change le titre h2 en italic */
+h2 /* Change le titre h2 en italic et l'affiche comme une étiquette */
 	{
+		border: 1px black solid;
+	    margin: auto;
+	    padding: auto;
+	    background-color: white;
 		font-style: italic;
 	}
 
@@ -26,7 +30,7 @@ th /*change en italic et souligne en rouge la partie du tableau dans la recherch
 		text-decoration:  black;
 	}
 
-form
+form /*change le disigne du formulaire*/
 	{
 		width: auto;
 		border: 1px solid black;
