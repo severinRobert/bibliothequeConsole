@@ -4,9 +4,9 @@
 CREATE PROCEDURE "DBA"."ajoutConsole"( IN pIdMarque INTEGER, IN pAnnee INTEGER, IN pIdPortabilite INTEGER, IN pModele VARCHAR (100) )
 BEGIN
 	INSERT INTO consoles                                    /* ajout de la console à la DB */
-        (idMarque, annee, idPortabilite, modele)
+        (idMarque, annee, idPortabilite, modele,idSecurite)
         VALUES
-        (pIdMarque, pAnnee, pIdPortabilite, pModele)
+        (pIdMarque, pAnnee, pIdPortabilite, pModele,0)
 END;
 
 /*Service Web*/
