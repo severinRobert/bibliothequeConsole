@@ -25,7 +25,7 @@ th /*change en italic et souligne en rouge la partie du tableau dans la recherch
 		font-size: 1.2em;
 	}
 
-#resulte /*affiche les messages en rouge */
+#result, #resultDeux /*affiche les messages en noir */
 	{
 		text-decoration:  black;
 	}
@@ -52,16 +52,16 @@ table
 		border-radius: 9px;
 	} 
 
-#erreurDate /*change la couleur du message d'erreur*/
-	{
-		color: red;
-	}
+#erreurDate, #erreurdateDeux /*change la couleur du message d'erreur*/
+{
+    color: red;
+}
 
-#conteneurRecherche, #conteneurAjout
-	{
-		display: flex;
-		flex-wrap: nowrap;
-	}
+#conteneurRecherche, #conteneurAjout, #conteneurRechercheDeux
+{
+    display: flex;
+    flex-wrap: nowrap;
+}
 
 #infoAjout /* ajoute un tableau dans la partie ajout d'une console */
 	{
