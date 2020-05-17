@@ -72,15 +72,16 @@ Le site permet au client d'interagir avec une base de données de consoles de je
       - Endpoint  : Permet de rajouter la console dans la base de données.           
                 
 - Arthur :
-  -AddCommentService : appelle la procédure "addComment".
-    - Paramètre : Reprends le commentaire de l'utilisateur.
-    - Format de réponse : Pas de réponse, modifie la base de donnée.
-    - Endpoint : Ajoute le commentaire de l'utilisateur dans la table "consoleComment".
+
+    -AddCommentService : appelle la procédure "addComment".
+      - Paramètre : Reprends le commentaire de l'utilisateur.
+      - Format de réponse : Pas de réponse, modifie la base de donnée.
+      - Endpoint : Ajoute le commentaire de l'utilisateur dans la table "consoleComment".
   
-  -TableConsoleComment : appelle la procédure "getConsoleComment".
-    - Paramètre : Aucun.
-    - Format de réponse : Reprends la colone "commentaire" dans la table "consoleComment" et le renvoie en format JSON.
-    - EndPoint : Afficher les commentaires sur le site.
+     -TableConsoleComment : appelle la procédure "getConsoleComment".
+      - Paramètre : Aucun.
+      - Format de réponse : Reprends la colone "commentaire" dans la table "consoleComment" et le renvoie en format JSON.
+      - EndPoint : Afficher les commentaires sur le site.
   
  
   
