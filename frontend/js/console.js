@@ -6,6 +6,7 @@ function initPage (){
     id('formulaireConsoleDeux').addEventListener('submit', traitementFormulaireDeux)
     id('submitComment').addEventListener('submit',addComment)
     id("ajoutConsole").addEventListener('submit',traitementAjoutConsole);
+    id("suppression").addEventListener('submit',suppression);
     ajoutMarqueChoix();
     ajoutMarqueChoixDeux();
 }
