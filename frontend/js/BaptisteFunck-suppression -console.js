@@ -9,7 +9,7 @@ function suppression() {
 	rConsoleExiste.open("get", "verifExiste?pModele=${pModele}" + "", true);
 	rConsoleExiste.onload = () =>{
 		if(!rConsoleExiste.reponseText)     {
-    	    id(suppressionInfo).innerHTML += "La suppression de la console n'a pas pu se faire car la console n'existe pas. <br/>"
+    	    id(suppressionInfo).innerHTML += "La suppression de la console n'a pas pu se faire car la console n'existe pas. <br/>";
     	}
     	else{
     	    let rVerificationSecurite = new XMLHttpRequest();
@@ -22,7 +22,7 @@ function suppression() {
     	        let rSuppressionConsole = new XMLHttpRequest();
     	        rSuppressionConsole.open("get", "suppressionConsole?pModele=${pModele}"+ "", true);
     	        rSuppressionConsole.onload = () =>{
-    	            id(suppressionInfo).innerHTML += " La console a bien été supprimée <br/>"
+    	            id(suppressionInfo).innerHTML += " La console a bien été supprimée <br/>";
    	         	}
     	    }
     	    rSuppressionConsole.send()
@@ -30,4 +30,5 @@ function suppression() {
     	rVerificationSecurite.send()
 	}
 	rConsoleExiste.send();
+}
 }
