@@ -33,7 +33,8 @@ function traitementAjoutConsole(event) {
 					let rAjoutMarque = new XMLHttpRequest();
 					rAjoutMarque.open('get', `ajoutMarque?pMarque=${pMarque}`,true);
 					rAjoutMarque.onload = () => {
-						ajoutMarqueChoix();     				//ajoute le choix de la marque créée dans le formulaire de recherche
+						ajoutMarqueChoix(); //ajoute le choix de la marque créée dans le formulaire de recherche
+						ajoutMarqueChoixDeux();
 					}
 					rAjoutMarque.send()
 				} 
