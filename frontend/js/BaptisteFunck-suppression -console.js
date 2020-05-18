@@ -8,7 +8,7 @@ function suppression() {
 	let rConsoleExiste = new XMLHttpRequest();
 	rConsoleExiste.open("get", "verifExiste?pModele=${pModele}" + "", true);
 	rConsoleExiste.onload = () =>{
-		if(!rExiste.reponseText)     {
+		if(!rConsoleExiste.reponseText)     {
     	    id(suppressionInfo).innerHTML += "La suppression de la console n'a pas pu se faire car la console n'existe pas. <br/>"
     	}
     	else{
