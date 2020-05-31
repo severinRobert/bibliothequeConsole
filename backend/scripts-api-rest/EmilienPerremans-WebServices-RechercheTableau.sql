@@ -2,7 +2,7 @@
 
 /*Procédure*/
 
-ALTER PROCEDURE "DBA"."getTableauConsole"( IN pMarque VARCHAR (100), IN pAnnee INTEGER, IN pPortabilite VARCHAR (40))/* */
+CREATE PROCEDURE "DBA"."getTableauConsole"( IN pMarque VARCHAR (100), IN pAnnee INTEGER, IN pPortabilite VARCHAR (40))/* */
 
 BEGIN
 	SELECT modele, nomMarque, typePortabilite,  annee, idConsole
